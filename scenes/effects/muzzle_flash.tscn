@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmuzzleflash01"]
+
+[ext_resource type="Script" path="res://scenes/effects/muzzle_flash.gd" id="1_script"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flash"]
+shading_mode = 0
+albedo_color = Color(1, 0.9, 0.4, 0.9)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_flash"]
+material = SubResource("StandardMaterial3D_flash")
+size = Vector2(0.18, 0.18)
+
+[node name="MuzzleFlash" type="Node3D"]
+visible = false
+script = ExtResource("1_script")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_flash")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.85, 0.4, 1)
+light_energy = 2.0
+omni_range = 3.5
+omni_attenuation = 2.0

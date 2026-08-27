@@ -1,0 +1,229 @@
+[gd_scene load_steps=2 format=3 uid="uid://chudscene01"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HUDControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hud")
+
+[node name="Crosshair" type="Control" parent="HUDControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dot" type="ColorRect" parent="HUDControl/Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="Top" type="ColorRect" parent="HUDControl/Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -14.0
+offset_right = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="Bottom" type="ColorRect" parent="HUDControl/Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 1.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="Left" type="ColorRect" parent="HUDControl/Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -1.0
+offset_right = -6.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="Right" type="ColorRect" parent="HUDControl/Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 14.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="Hitmarker" type="Control" parent="HUDControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 0)
+mouse_filter = 2
+
+[node name="LineTL" type="ColorRect" parent="HUDControl/Hitmarker"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = -4.0
+offset_bottom = -8.0
+rotation = 0.785398
+mouse_filter = 2
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="LineTR" type="ColorRect" parent="HUDControl/Hitmarker"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -10.0
+offset_right = 12.0
+offset_bottom = -8.0
+rotation = -0.785398
+mouse_filter = 2
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="LineBL" type="ColorRect" parent="HUDControl/Hitmarker"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 8.0
+offset_right = -4.0
+offset_bottom = 10.0
+rotation = -0.785398
+mouse_filter = 2
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="LineBR" type="ColorRect" parent="HUDControl/Hitmarker"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 12.0
+offset_bottom = 10.0
+rotation = 0.785398
+mouse_filter = 2
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="TopLeft" type="MarginContainer" parent="HUDControl"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 60.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+
+[node name="ScoreLabel" type="Label" parent="HUDControl/TopLeft"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SCORE: 0"
+
+[node name="BottomRight" type="MarginContainer" parent="HUDControl"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="HUDControl/BottomRight"]
+layout_mode = 2
+
+[node name="WeaponName" type="Label" parent="HUDControl/BottomRight/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "M4A1 5.56mm"
+horizontal_alignment = 2
+
+[node name="AmmoLabel" type="Label" parent="HUDControl/BottomRight/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "30 / 30"
+horizontal_alignment = 2
+
+[node name="GrenadeLabel" type="Label" parent="HUDControl/BottomRight/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "M203 40mm: 4 / 4"
+horizontal_alignment = 2
+
+[node name="BottomLeft" type="MarginContainer" parent="HUDControl"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_right = 440.0
+grow_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="ControlsInfo" type="Label" parent="HUDControl/BottomLeft"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 0.85)
+theme_override_font_sizes/font_size = 13
+text = "WASD: Move | Shift: Sprint | C / Ctrl: Crouch | Space: Jump
+1 / 2 / Q / Scroll: Switch Weapon (M4A1 / M9 Pistol)
+LMB: Fire | RMB: Aim Down Sights (ADS)
+F / MMB / G: Launch M203 Grenade (when M4 equipped)
+R: Reload | E: Resupply Crate | ESC: Toggle Mouse"

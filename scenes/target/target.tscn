@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctargetscene01"]
+
+[ext_resource type="Script" path="res://scenes/target/target.gd" id="1_target"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stand"]
+albedo_color = Color(0.2, 0.2, 0.22, 1)
+metallic = 0.8
+roughness = 0.4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_stand"]
+material = SubResource("StandardMaterial3D_stand")
+top_radius = 0.04
+bottom_radius = 0.04
+height = 1.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_stand"]
+height = 1.2
+radius = 0.06
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plate"]
+albedo_color = Color(0.9, 0.85, 0.8, 1)
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_plate"]
+material = SubResource("StandardMaterial3D_plate")
+top_radius = 0.35
+bottom_radius = 0.35
+height = 0.04
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bullseye"]
+albedo_color = Color(0.85, 0.15, 0.15, 1)
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bullseye"]
+material = SubResource("StandardMaterial3D_bullseye")
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.045
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_plate"]
+height = 0.05
+radius = 0.35
+
+[node name="Target" type="Node3D" groups=["targets"]]
+script = ExtResource("1_target")
+
+[node name="StandMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+mesh = SubResource("CylinderMesh_stand")
+
+[node name="StandBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StandBody"]
+shape = SubResource("CylinderShape3D_stand")
+
+[node name="Hinge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Hinge" groups=["damageable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Hinge/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_plate")
+
+[node name="BullseyeMesh" type="MeshInstance3D" parent="Hinge/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.005)
+mesh = SubResource("CylinderMesh_bullseye")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_plate")
