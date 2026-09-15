@@ -33,10 +33,18 @@ func _ready() -> void:
 	start_pos = global_position
 	current_health = max_health
 	
+	if visual_root:
+		visual_root.rotation.y = get_target_rot_y()
+	
 	if audio_hit and audio_hit.stream == null:
 		audio_hit.stream = ProceduralAudio.create_robot_hit_sample()
 	if audio_death and audio_death.stream == null:
 		audio_death.stream = ProceduralAudio.create_robot_death_sample()
+
+func get_target_rot_y() -> float:
+	# Face the direction of movement along the X axis
+	var dir_sign = (1.0 if moving_forward else -1.0) * patrol_dir_x
+	return -PI * 0.5 if dir_sign > 0.0 else PI * 0.5
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -50,12 +58,12 @@ func _physics_process(delta: float) -> void:
 	target_offset = (global_position.x - start_pos.x) * patrol_dir_x
 	if moving_forward and target_offset >= patrol_distance:
 		moving_forward = false
-		turn_robot(PI)
+		turn_robot(get_target_rot_y())
 	elif not moving_forward and target_offset <= -patrol_distance:
 		moving_forward = true
-		turn_robot(0.0)
+		turn_robot(get_target_rot_y())
 	
-	# Procedural Walking Animation
+	# Procedural Walking Animation (relative to current facing direction)
 	walk_time += delta * move_speed * 3.2
 	var leg_angle = sin(walk_time) * 0.45
 	var arm_angle = -sin(walk_time) * 0.4
@@ -140,7 +148,7 @@ func respawn() -> void:
 	is_dead = false
 	
 	if visual_root:
-		visual_root.rotation.y = 0.0
+		visual_root.rotation.y = get_target_rot_y()
 		visual_root.visible = true
 		visual_root.scale = Vector3.ZERO
 		var tween = create_tween()
