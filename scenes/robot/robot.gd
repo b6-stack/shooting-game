@@ -42,24 +42,18 @@ func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
 		
-	# Patrol logic along X axis
-	var target_x = patrol_distance if moving_forward else -patrol_distance
-	var step = move_speed * delta
+	# Patrol logic along X axis using native velocity and move_and_slide
+	var move_sign = 1.0 if moving_forward else -1.0
+	velocity = Vector3(move_sign * move_speed * patrol_dir_x, 0, 0)
+	move_and_slide()
 	
-	if moving_forward:
-		target_offset += step
-		if target_offset >= patrol_distance:
-			target_offset = patrol_distance
-			moving_forward = false
-			turn_robot(PI)
-	else:
-		target_offset -= step
-		if target_offset <= -patrol_distance:
-			target_offset = -patrol_distance
-			moving_forward = true
-			turn_robot(0.0)
-			
-	global_position.x = start_pos.x + target_offset * patrol_dir_x
+	target_offset = (global_position.x - start_pos.x) * patrol_dir_x
+	if moving_forward and target_offset >= patrol_distance:
+		moving_forward = false
+		turn_robot(PI)
+	elif not moving_forward and target_offset <= -patrol_distance:
+		moving_forward = true
+		turn_robot(0.0)
 	
 	# Procedural Walking Animation
 	walk_time += delta * move_speed * 3.2

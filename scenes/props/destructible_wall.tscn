@@ -1,6 +1,151 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdestructiblewallscene01"]
+[gd_scene load_steps=9 format=3 uid="uid://cdestructiblewallscene01"]
 
 [ext_resource type="Script" path="res://scenes/props/destructible_wall.gd" id="1_wall"]
+[ext_resource type="Script" path="res://scenes/props/destructible_section.gd" id="2_section"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brick"]
+albedo_color = Color(0.65, 0.35, 0.25, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_section"]
+material = SubResource("StandardMaterial3D_brick")
+size = Vector3(1.45, 1.15, 0.35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_section"]
+size = Vector3(1.5, 1.2, 0.35)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rubble"]
+direction = Vector3(0, 1, 0)
+spread = 120.0
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, -9.8, 0)
+scale_min = 0.1
+scale_max = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dust"]
+albedo_color = Color(0.55, 0.45, 0.38, 1)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="BoxMesh_chunk"]
+material = SubResource("StandardMaterial3D_dust")
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="DestructibleWall" type="Node3D"]
 script = ExtResource("1_wall")
+
+[node name="Sections" type="Node3D" parent="."]
+
+[node name="Section_0_0" type="StaticBody3D" parent="Sections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.6, 0)
+script = ExtResource("2_section")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sections/Section_0_0"]
+mesh = SubResource("BoxMesh_section")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sections/Section_0_0"]
+shape = SubResource("BoxShape3D_section")
+
+[node name="RubbleParticles" type="GPUParticles3D" parent="Sections/Section_0_0"]
+emitting = false
+amount = 16
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_rubble")
+draw_pass_1 = SubResource("BoxMesh_chunk")
+
+[node name="Section_1_0" type="StaticBody3D" parent="Sections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+script = ExtResource("2_section")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sections/Section_1_0"]
+mesh = SubResource("BoxMesh_section")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sections/Section_1_0"]
+shape = SubResource("BoxShape3D_section")
+
+[node name="RubbleParticles" type="GPUParticles3D" parent="Sections/Section_1_0"]
+emitting = false
+amount = 16
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_rubble")
+draw_pass_1 = SubResource("BoxMesh_chunk")
+
+[node name="Section_2_0" type="StaticBody3D" parent="Sections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.6, 0)
+script = ExtResource("2_section")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sections/Section_2_0"]
+mesh = SubResource("BoxMesh_section")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sections/Section_2_0"]
+shape = SubResource("BoxShape3D_section")
+
+[node name="RubbleParticles" type="GPUParticles3D" parent="Sections/Section_2_0"]
+emitting = false
+amount = 16
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_rubble")
+draw_pass_1 = SubResource("BoxMesh_chunk")
+
+[node name="Section_0_1" type="StaticBody3D" parent="Sections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.8, 0)
+script = ExtResource("2_section")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sections/Section_0_1"]
+mesh = SubResource("BoxMesh_section")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sections/Section_0_1"]
+shape = SubResource("BoxShape3D_section")
+
+[node name="RubbleParticles" type="GPUParticles3D" parent="Sections/Section_0_1"]
+emitting = false
+amount = 16
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_rubble")
+draw_pass_1 = SubResource("BoxMesh_chunk")
+
+[node name="Section_1_1" type="StaticBody3D" parent="Sections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+script = ExtResource("2_section")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sections/Section_1_1"]
+mesh = SubResource("BoxMesh_section")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sections/Section_1_1"]
+shape = SubResource("BoxShape3D_section")
+
+[node name="RubbleParticles" type="GPUParticles3D" parent="Sections/Section_1_1"]
+emitting = false
+amount = 16
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_rubble")
+draw_pass_1 = SubResource("BoxMesh_chunk")
+
+[node name="Section_2_1" type="StaticBody3D" parent="Sections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.8, 0)
+script = ExtResource("2_section")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sections/Section_2_1"]
+mesh = SubResource("BoxMesh_section")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sections/Section_2_1"]
+shape = SubResource("BoxShape3D_section")
+
+[node name="RubbleParticles" type="GPUParticles3D" parent="Sections/Section_2_1"]
+emitting = false
+amount = 16
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_rubble")
+draw_pass_1 = SubResource("BoxMesh_chunk")

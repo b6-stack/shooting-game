@@ -66,6 +66,7 @@ func init_weapons() -> void:
 		current_slot = 0
 		weapon = weapon_slots[0]
 		weapon.visible = true
+		weapon.set_process(true)
 		setup_weapon_signals()
 		refresh_hud()
 
@@ -133,12 +134,15 @@ func switch_to_slot(slot_idx: int) -> void:
 	if old_weapon and old_weapon.has_method("holster"):
 		var holster_tween = old_weapon.holster()
 		await holster_tween.finished
+		old_weapon.set_process(false)
 	elif old_weapon:
 		old_weapon.visible = false
+		old_weapon.set_process(false)
 		
 	# Switch reference
 	current_slot = slot_idx
 	weapon = new_weapon
+	weapon.set_process(true)
 	setup_weapon_signals()
 	refresh_hud()
 	
