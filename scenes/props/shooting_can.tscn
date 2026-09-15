@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cshootablecanscene01"]
+
+[ext_resource type="Script" path="res://scenes/props/shooting_can.gd" id="1_can"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_can"]
+bounce = 0.45
+absorbent = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_body"]
+top_radius = 0.06
+bottom_radius = 0.06
+height = 0.2
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rim"]
+albedo_color = Color(0.85, 0.85, 0.88, 1)
+metallic = 0.95
+roughness = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rim"]
+material = SubResource("StandardMaterial3D_rim")
+top_radius = 0.055
+bottom_radius = 0.055
+height = 0.015
+radial_segments = 16
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_can"]
+height = 0.2
+radius = 0.06
+
+[node name="ShootingCan" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_can")
+script = ExtResource("1_can")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_body")
+
+[node name="TopRim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098, 0)
+mesh = SubResource("CylinderMesh_rim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_can")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unit_size = 10.0
+max_distance = 60.0

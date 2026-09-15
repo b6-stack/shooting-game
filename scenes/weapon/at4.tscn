@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://cat4launcherscene01"]
+
+[ext_resource type="Script" path="res://scenes/weapon/at4.gd" id="1_at4"]
+[ext_resource type="PackedScene" path="res://scenes/effects/muzzle_flash.tscn" id="2_muzzle_flash"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tube"]
+albedo_color = Color(0.24, 0.32, 0.22, 1)
+metallic = 0.25
+roughness = 0.65
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_main_tube"]
+material = SubResource("StandardMaterial3D_tube")
+top_radius = 0.055
+bottom_radius = 0.055
+height = 1.05
+radial_segments = 20
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rubber"]
+albedo_color = Color(0.12, 0.12, 0.12, 1)
+roughness = 0.85
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bumper"]
+material = SubResource("StandardMaterial3D_rubber")
+top_radius = 0.072
+bottom_radius = 0.072
+height = 0.07
+radial_segments = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stripe"]
+albedo_color = Color(0.9, 0.75, 0.1, 1)
+roughness = 0.4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_stripe"]
+material = SubResource("StandardMaterial3D_stripe")
+top_radius = 0.056
+bottom_radius = 0.056
+height = 0.04
+radial_segments = 20
+
+[sub_resource type="BoxMesh" id="BoxMesh_sight"]
+material = SubResource("StandardMaterial3D_rubber")
+size = Vector3(0.015, 0.045, 0.02)
+
+[node name="AT4" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, -0.16, -0.26)
+script = ExtResource("1_at4")
+weapon_name = "AT4 84mm Rocket"
+is_automatic = false
+has_grenade_launcher = false
+damage = 450.0
+fire_rate = 1.0
+max_ammo = 1
+tactical_reload_time = 3.6
+empty_reload_time = 3.6
+hip_position = Vector3(0.18, -0.16, -0.26)
+ads_position = Vector3(0, -0.11, -0.22)
+sprint_position_offset = Vector3(-0.06, -0.06, 0.04)
+sprint_rotation_euler = Vector3(-0.279253, 0.418879, -0.523599)
+
+[node name="ModelContainer" type="Node3D" parent="."]
+
+[node name="Tube" type="MeshInstance3D" parent="ModelContainer"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_main_tube")
+
+[node name="FrontBumper" type="MeshInstance3D" parent="ModelContainer"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.5)
+mesh = SubResource("CylinderMesh_bumper")
+
+[node name="RearBumper" type="MeshInstance3D" parent="ModelContainer"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
+mesh = SubResource("CylinderMesh_bumper")
+
+[node name="YellowBand" type="MeshInstance3D" parent="ModelContainer"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.42)
+mesh = SubResource("CylinderMesh_stripe")
+
+[node name="FrontSight" type="MeshInstance3D" parent="ModelContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, -0.38)
+mesh = SubResource("BoxMesh_sight")
+
+[node name="RearSight" type="MeshInstance3D" parent="ModelContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.05)
+mesh = SubResource("BoxMesh_sight")
+
+[node name="MuzzleFlash" parent="." instance=ExtResource("2_muzzle_flash")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0

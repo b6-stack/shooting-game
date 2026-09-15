@@ -223,7 +223,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 0.85)
 theme_override_font_sizes/font_size = 13
 text = "WASD: Move | Shift: Sprint | C / Ctrl: Crouch | Space: Jump
-1 / 2 / Q / Scroll: Switch Weapon (M4A1 / M9 Pistol)
+1 / 2 / 3 / Q / Scroll: Switch Weapon (M4A1 / M9 / AT4 Rocket)
 LMB: Fire | RMB: Aim Down Sights (ADS)
 F / MMB / G: Launch M203 Grenade (when M4 equipped)
 R: Reload | E: Resupply Crate | ESC: Toggle Mouse"

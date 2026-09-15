@@ -1,14 +1,13 @@
 extends Node3D
 
-signal grenade_hit_target(points: int)
+signal rocket_hit_target(points: int)
 
-@export var speed: float = 40.0
-@export var gravity: float = 14.0
-@export var explosion_radius: float = 12.0 # Increased blast radius
-@export var max_damage: float = 200.0
+@export var speed: float = 75.0
+@export var explosion_radius: float = 20.0
+@export var max_damage: float = 500.0
 
 var velocity: Vector3 = Vector3.ZERO
-var lifetime: float = 6.0
+var lifetime: float = 8.0
 var has_exploded: bool = false
 
 const EXPLOSION_EFFECT = preload("res://scenes/effects/explosion.tscn")
@@ -29,10 +28,7 @@ func _physics_process(delta: float) -> void:
 	if has_exploded:
 		return
 		
-	# Apply gravity to ballistic arc
-	velocity.y -= gravity * delta
-	
-	# Raycast forward along step to prevent tunneling through thin walls/targets
+	# Raycast forward sweep to prevent tunneling
 	var step = velocity * delta
 	var space_state = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(global_position, global_position + step)
@@ -45,7 +41,6 @@ func _physics_process(delta: float) -> void:
 		explode()
 	else:
 		global_position += step
-		# Orient grenade along velocity vector
 		if velocity.length_squared() > 0.1:
 			look_at(global_position + velocity.normalized(), Vector3.UP)
 			
@@ -61,12 +56,13 @@ func explode() -> void:
 		return
 	has_exploded = true
 	
-	# Spawn explosion effect
+	# Spawn explosion effect with larger scale
 	var exp_node = EXPLOSION_EFFECT.instantiate()
 	get_tree().current_scene.add_child(exp_node)
 	exp_node.global_position = global_position
+	exp_node.scale = Vector3(1.6, 1.6, 1.6)
 	
-	# Radial AoE Damage & Target Knockdown
+	# Radial AoE Damage, Knockdown & Physics Blasts
 	var space_state = get_world_3d().direct_space_state
 	var shape_query = PhysicsShapeQueryParameters3D.new()
 	var sphere = SphereShape3D.new()
@@ -76,7 +72,7 @@ func explode() -> void:
 	shape_query.collide_with_areas = true
 	shape_query.collide_with_bodies = true
 	
-	var hits = space_state.intersect_shape(shape_query, 64)
+	var hits = space_state.intersect_shape(shape_query, 128)
 	var targets_hit = 0
 	var processed_roots = {}
 	
@@ -91,26 +87,24 @@ func explode() -> void:
 			target_obj = collider.get_parent()
 			
 		if target_obj and target_obj.has_method("take_damage"):
-			# Prevent damaging the same multi-collider target twice
 			var obj_id = target_obj.get_instance_id()
-			if processed_roots.has(obj_id):
-				continue
-			processed_roots[obj_id] = true
-			
-			var dist = global_position.distance_to(result.collider.global_position)
-			var falloff = clampf(1.0 - (dist / explosion_radius), 0.25, 1.0)
-			target_obj.take_damage(max_damage * falloff, global_position, Vector3.UP)
-			targets_hit += 1
-
+			if not processed_roots.has(obj_id):
+				processed_roots[obj_id] = true
+				var dist = global_position.distance_to(result.collider.global_position)
+				var falloff = clampf(1.0 - (dist / explosion_radius), 0.25, 1.0)
+				target_obj.take_damage(max_damage * falloff, global_position, Vector3.UP)
+				targets_hit += 1
+				
+		# Physics blast impulse
 		if collider is RigidBody3D:
 			var dir = (collider.global_position - global_position).normalized()
 			if dir.length_squared() < 0.001:
 				dir = Vector3.UP
 			var dist = global_position.distance_to(collider.global_position)
 			var falloff = clampf(1.0 - (dist / explosion_radius), 0.2, 1.0)
-			collider.apply_impulse((dir + Vector3.UP * 0.4).normalized() * (max_damage * 0.25 * falloff))
+			collider.apply_impulse((dir + Vector3.UP * 0.5).normalized() * (max_damage * 0.4 * falloff))
 			
 	if targets_hit > 0:
-		grenade_hit_target.emit(targets_hit * 100)
+		rocket_hit_target.emit(targets_hit * 150)
 		
 	queue_free()

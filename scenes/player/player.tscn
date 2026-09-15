@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cplayerscene01"]
+[gd_scene load_steps=7 format=3 uid="uid://cplayerscene01"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/weapon/m4a1.tscn" id="2_m4a1"]
 [ext_resource type="PackedScene" path="res://scenes/weapon/m9.tscn" id="3_m9"]
-[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="4_hud"]
+[ext_resource type="PackedScene" path="res://scenes/weapon/at4.tscn" id="4_at4"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="5_hud"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 radius = 0.4
@@ -30,4 +31,7 @@ fov = 75.0
 [node name="M9" parent="Head/Camera3D/WeaponHolder" instance=ExtResource("3_m9")]
 visible = false
 
-[node name="HUD" parent="." instance=ExtResource("4_hud")]
+[node name="AT4" parent="Head/Camera3D/WeaponHolder" instance=ExtResource("4_at4")]
+visible = false
+
+[node name="HUD" parent="." instance=ExtResource("5_hud")]

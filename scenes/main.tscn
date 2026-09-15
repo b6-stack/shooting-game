@@ -1,8 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwytwexlqsycq"]
+[gd_scene load_steps=19 format=3 uid="uid://bwytwexlqsycq"]
 
 [ext_resource type="PackedScene" uid="uid://cfpo0lh1je03y" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://b8sbflkrx65c7" path="res://scenes/target/target.tscn" id="2_target"]
 [ext_resource type="PackedScene" uid="uid://bsh851dwx4elg" path="res://scenes/world/ammo_box.tscn" id="3_ammo_box"]
+[ext_resource type="PackedScene" path="res://scenes/props/shooting_can.tscn" id="4_can"]
+[ext_resource type="PackedScene" path="res://scenes/robot/robot.tscn" id="5_robot"]
+[ext_resource type="PackedScene" path="res://scenes/props/destructible_wall.tscn" id="6_destructible_wall"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
 sky_top_color = Color(0.35, 0.55, 0.85, 1)
@@ -51,6 +54,13 @@ size = Vector3(4, 0.9, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_table"]
 size = Vector3(4, 0.9, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_can_stand"]
+material = SubResource("StandardMaterial3D_wall")
+size = Vector3(3, 0.8, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_can_stand"]
+size = Vector3(3, 0.8, 0.5)
+
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -94,10 +104,10 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 [node name="Targets" type="Node3D" parent="."]
 
 [node name="Target_10m_Left" parent="Targets" instance=ExtResource("2_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -10)
 
 [node name="Target_10m_Right" parent="Targets" instance=ExtResource("2_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -10)
 
 [node name="Target_20m_Center" parent="Targets" instance=ExtResource("2_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
@@ -109,12 +119,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -25)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -25)
 
 [node name="Target_40m_Left" parent="Targets" instance=ExtResource("2_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -40)
 
 [node name="Target_40m_Right" parent="Targets" instance=ExtResource("2_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -40)
 
 [node name="Target_60m_Center" parent="Targets" instance=ExtResource("2_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
+
+[node name="CanStand" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -13)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CanStand"]
+mesh = SubResource("BoxMesh_can_stand")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CanStand"]
+shape = SubResource("BoxShape3D_can_stand")
+
+[node name="Cans" type="Node3D" parent="."]
+
+[node name="Can_Red" parent="Cans" instance=ExtResource("4_can")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0, 0.9, -13)
+can_color = Color(0.85, 0.15, 0.15, 1)
+
+[node name="Can_Blue" parent="Cans" instance=ExtResource("4_can")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.9, -13)
+can_color = Color(0.15, 0.35, 0.85, 1)
+
+[node name="Can_Green" parent="Cans" instance=ExtResource("4_can")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0.9, -13)
+can_color = Color(0.15, 0.75, 0.25, 1)
+
+[node name="Can_Gold" parent="Cans" instance=ExtResource("4_can")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.9, -13)
+can_color = Color(0.9, 0.75, 0.1, 1)
+
+[node name="Can_Orange" parent="Cans" instance=ExtResource("4_can")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0, 0.9, -13)
+can_color = Color(0.95, 0.45, 0.1, 1)
+
+[node name="Robots" type="Node3D" parent="."]
+
+[node name="WalkingRobot_Mid" parent="Robots" instance=ExtResource("5_robot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22)
+patrol_distance = 6.0
+move_speed = 2.2
+patrol_dir_x = 1.0
+
+[node name="WalkingRobot_Far" parent="Robots" instance=ExtResource("5_robot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35)
+patrol_distance = 8.5
+move_speed = 2.8
+patrol_dir_x = -1.0
+
+[node name="DestructibleWall" parent="." instance=ExtResource("6_destructible_wall")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
 
 [node name="Player" parent="." instance=ExtResource("1_player")]

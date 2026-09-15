@@ -298,6 +298,12 @@ func perform_raycast(camera: Camera3D) -> void:
 			hit_collider.get_parent().take_damage(damage, hit_pos, hit_normal)
 			damaged_target = true
 
+		# Apply physics impulse if hit object is a RigidBody3D
+		if hit_collider is RigidBody3D:
+			var impulse_dir = (target - origin).normalized()
+			var local_offset = hit_pos - hit_collider.global_position
+			hit_collider.apply_impulse(impulse_dir * (damage * 0.18), local_offset)
+
 		if damaged_target:
 			hit_target.emit(100)
 

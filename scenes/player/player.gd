@@ -177,6 +177,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.keycode == KEY_2:
 			switch_to_slot(1)
 			return
+		elif event.keycode == KEY_3:
+			switch_to_slot(2)
+			return
 		elif event.keycode == KEY_Q:
 			var next_slot = (current_slot + 1) % weapon_slots.size()
 			switch_to_slot(next_slot)
