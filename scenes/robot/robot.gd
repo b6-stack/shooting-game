@@ -126,7 +126,7 @@ func die() -> void:
 	if visual_root:
 		visual_root.visible = false
 	if collision_shape:
-		collision_shape.disabled = true
+		collision_shape.set_deferred("disabled", true)
 		
 	# Award points to player
 	robot_defeated.emit(250)
@@ -155,4 +155,4 @@ func respawn() -> void:
 		tween.tween_property(visual_root, "scale", Vector3.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		
 	if collision_shape:
-		collision_shape.disabled = false
+		collision_shape.set_deferred("disabled", false)

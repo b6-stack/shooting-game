@@ -80,12 +80,13 @@ func respawn() -> void:
 	tween.tween_property(self, "scale", Vector3.ZERO, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	await tween.finished
 	
-	freeze = true
-	global_transform = initial_transform
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
-	freeze = false
-	sleeping = true
+	PhysicsServer3D.body_set_state(get_rid(), PhysicsServer3D.BODY_STATE_TRANSFORM, initial_transform)
+	PhysicsServer3D.body_set_state(get_rid(), PhysicsServer3D.BODY_STATE_LINEAR_VELOCITY, Vector3.ZERO)
+	PhysicsServer3D.body_set_state(get_rid(), PhysicsServer3D.BODY_STATE_ANGULAR_VELOCITY, Vector3.ZERO)
+	PhysicsServer3D.body_set_state(get_rid(), PhysicsServer3D.BODY_STATE_SLEEPING, true)
+	global_transform = initial_transform
 	
 	scale = Vector3.ZERO
 	var pop_tween = create_tween()

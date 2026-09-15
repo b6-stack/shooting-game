@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv4j5tx6qqau3"]
+
+[ext_resource type="Script" path="res://scenes/props/wall_debris.gd" id="1_debris"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_brick"]
+friction = 0.75
+bounce = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brick"]
+albedo_color = Color(0.65, 0.35, 0.25, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_debris"]
+material = SubResource("StandardMaterial3D_brick")
+size = Vector3(0.45, 0.26, 0.22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_debris"]
+size = Vector3(0.45, 0.26, 0.22)
+
+[node name="WallDebris" type="RigidBody3D"]
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_brick")
+script = ExtResource("1_debris")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_debris")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_debris")
