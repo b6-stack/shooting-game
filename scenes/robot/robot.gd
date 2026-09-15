@@ -30,6 +30,7 @@ const EXPLOSION_EFFECT = preload("res://scenes/effects/explosion.tscn")
 const ProceduralAudio = preload("res://scenes/weapon/procedural_audio.gd")
 
 func _ready() -> void:
+	motion_mode = CharacterBody3D.MOTION_MODE_FLOATING
 	start_pos = global_position
 	current_health = max_health
 	

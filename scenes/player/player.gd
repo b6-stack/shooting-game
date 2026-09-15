@@ -35,6 +35,7 @@ var is_crouching: bool = false
 var is_sprinting: bool = false
 var bob_time: float = 0.0
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8)
+var mouse_input: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	capture_mouse(true)
@@ -44,7 +45,20 @@ func _ready() -> void:
 	
 	init_weapons()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	# Smooth render-rate mouse look
+	if mouse_captured and mouse_input.length_squared() > 0.0:
+		rotate_y(-mouse_input.x * mouse_sensitivity)
+		head.rotate_x(-mouse_input.y * mouse_sensitivity)
+		head.rotation.x = clampf(head.rotation.x, deg_to_rad(-89.0), deg_to_rad(89.0))
+		if weapon and weapon.has_method("add_sway"):
+			weapon.add_sway(mouse_input)
+		mouse_input = Vector2.ZERO
+
+	# Smooth camera crouch transition in render frame
+	var target_head_y = crouch_head_height if is_crouching else default_head_height
+	head.position.y = lerpf(head.position.y, target_head_y, delta * 14.0)
+
 	# Continuous real-time crosshair spread update
 	if weapon and hud:
 		var hud_control = hud.get_node_or_null("HUDControl")
@@ -204,15 +218,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggle_crouch()
 		return
 
-	# Mouse look
+	# Mouse look: accumulate for render-rate _process
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		head.rotate_x(-event.relative.y * mouse_sensitivity)
-		head.rotation.x = clampf(head.rotation.x, deg_to_rad(-89.0), deg_to_rad(89.0))
-		
-		# Apply weapon sway
-		if weapon and weapon.has_method("add_sway"):
-			weapon.add_sway(event.relative)
+		mouse_input += event.relative
 
 func toggle_crouch() -> void:
 	is_crouching = not is_crouching
@@ -278,10 +286,7 @@ func _physics_process(delta: float) -> void:
 			var horiz_speed = Vector2(velocity.x, velocity.z).length()
 			weapon.set_movement_speed_ratio(horiz_speed / walk_speed)
 
-	# Process Crouch height transition
-	var target_head_y = crouch_head_height if is_crouching else default_head_height
-	head.position.y = lerpf(head.position.y, target_head_y, delta * 10.0)
-	
+	# Process Crouch capsule height transition (physics only)
 	if collision_shape and collision_shape.shape is CapsuleShape3D:
 		var target_height = crouch_capsule_height if is_crouching else default_capsule_height
 		if abs(collision_shape.shape.height - target_height) > 0.005:

@@ -89,6 +89,10 @@ interact={
 ]
 }
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [physics]
 
 common/physics_interpolation=true
@@ -97,7 +101,7 @@ common/physics_interpolation=true
 
 renderer/rendering_method="mobile"
 scaling_3d/mode=0
-scaling_3d/scale=0.65
+scaling_3d/scale=0.5
 anti_aliasing/quality/msaa_3d=0
 anti_aliasing/quality/screen_space_aa=0
-lights_and_shadows/directional_shadow/size=1024
+lights_and_shadows/directional_shadow/size=512
