@@ -284,8 +284,9 @@ func _physics_process(delta: float) -> void:
 	
 	if collision_shape and collision_shape.shape is CapsuleShape3D:
 		var target_height = crouch_capsule_height if is_crouching else default_capsule_height
-		collision_shape.shape.height = lerpf(collision_shape.shape.height, target_height, delta * 10.0)
-		collision_shape.position.y = lerpf(collision_shape.position.y, target_height * 0.5, delta * 10.0)
+		if abs(collision_shape.shape.height - target_height) > 0.005:
+			collision_shape.shape.height = lerpf(collision_shape.shape.height, target_height, delta * 10.0)
+			collision_shape.position.y = collision_shape.shape.height * 0.5
 
 	# Process Weapon & Aiming
 	handle_weapon_actions(delta)

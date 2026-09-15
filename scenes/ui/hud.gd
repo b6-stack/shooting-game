@@ -11,9 +11,11 @@ extends Control
 @onready var ch_bottom: ColorRect = $Crosshair/Bottom
 @onready var ch_left: ColorRect = $Crosshair/Left
 @onready var ch_right: ColorRect = $Crosshair/Right
+@onready var perf_label: Label = $TopRight/PerfLabel
 
 var hitmarker_tween: Tween
 var score: int = 0
+var gpu_name: String = ""
 
 const BASE_GAP: float = 5.0
 const MAX_EXTRA_GAP: float = 28.0
@@ -21,12 +23,23 @@ const LINE_LEN: float = 9.0
 const LINE_THICK: float = 2.0
 
 func _ready() -> void:
+	gpu_name = RenderingServer.get_video_adapter_name()
+	print("[SYSTEM] Active Video Adapter: %s" % gpu_name)
 	if hitmarker:
 		hitmarker.modulate.a = 0.0
 	update_ammo(30, 30)
 	update_grenades(4, 4)
 	update_score(0)
 	set_crosshair_spread(0.3)
+
+func _process(_delta: float) -> void:
+	if perf_label:
+		var fps = Engine.get_frames_per_second()
+		perf_label.text = "%d FPS | %s" % [fps, gpu_name]
+		if fps < 35:
+			perf_label.add_theme_color_override("font_color", Color(1.0, 0.3, 0.3, 0.9))
+		else:
+			perf_label.add_theme_color_override("font_color", Color(0.2, 1.0, 0.4, 0.9))
 
 func set_weapon_info(w_name: String, has_gl: bool, slot_num: int) -> void:
 	if weapon_name_label:

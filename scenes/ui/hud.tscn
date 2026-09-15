@@ -227,3 +227,21 @@ text = "WASD: Move | Shift: Sprint | C / Ctrl: Crouch | Space: Jump
 LMB: Fire | RMB: Aim Down Sights (ADS)
 F / MMB / G: Launch M203 Grenade (when M4 equipped)
 R: Reload | E: Resupply Crate | ESC: Toggle Mouse"
+
+[node name="TopRight" type="MarginContainer" parent="HUDControl"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+
+[node name="PerfLabel" type="Label" parent="HUDControl/TopRight"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 1, 0.4, 0.9)
+theme_override_font_sizes/font_size = 14
+text = "60 FPS | GPU"
+horizontal_alignment = 2
