@@ -13,12 +13,16 @@ config_version=5
 config/name="ShootingGame"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
 run/max_fps=60
+config/icon="res://icon.svg"
 
 [autoload]
 
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+
+[display]
+
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
@@ -89,10 +93,6 @@ interact={
 ]
 }
 
-[display]
-
-window/vsync/vsync_mode=0
-
 [physics]
 
 common/physics_interpolation=true
@@ -100,8 +100,5 @@ common/physics_interpolation=true
 [rendering]
 
 renderer/rendering_method="mobile"
-scaling_3d/mode=0
-scaling_3d/scale=0.5
-anti_aliasing/quality/msaa_3d=0
-anti_aliasing/quality/screen_space_aa=0
 lights_and_shadows/directional_shadow/size=512
+scaling_3d/scale=0.5
