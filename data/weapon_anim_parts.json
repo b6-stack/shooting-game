@@ -1,0 +1,331 @@
+{
+	"ak_47": {
+		"body": "res://assets/weapons/parts/ak_47_body.res",
+		"bolt": "res://assets/weapons/parts/ak_47_bolt.res",
+		"bolt_travel": 0.052
+	},
+	"armalite_ar10": {
+		"body": "res://assets/weapons/parts/armalite_ar10_body.res",
+		"mag": "res://assets/weapons/parts/armalite_ar10_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.19,
+			0.01
+		]
+	},
+	"arp_9": {
+		"body": "res://assets/weapons/parts/arp_9_body.res",
+		"bolt": "res://assets/weapons/parts/arp_9_bolt.res",
+		"bolt_travel": 0.048,
+		"mag": "res://assets/weapons/parts/arp_9_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.015
+		]
+	},
+	"barret_m82a1": {
+		"body": "res://assets/weapons/parts/barret_m82a1_body.res",
+		"mag": "res://assets/weapons/parts/barret_m82a1_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.22,
+			0.01
+		]
+	},
+	"beretta_m9": {
+		"body": "res://assets/weapons/parts/beretta_m9_body.res",
+		"mag": "res://assets/weapons/parts/beretta_m9_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.14,
+			0.04
+		],
+		"slide": "res://assets/weapons/parts/beretta_m9_slide.res",
+		"slide_travel": 0.032
+	},
+	"colt_m16a2": {
+		"body": "res://assets/weapons/parts/colt_m16a2_body.res",
+		"mag": "res://assets/weapons/parts/colt_m16a2_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.2,
+			0.015
+		]
+	},
+	"colt_m4a1": {
+		"body": "res://assets/weapons/parts/colt_m4a1_body.res",
+		"bolt": "res://assets/weapons/parts/colt_m4a1_bolt.res",
+		"bolt_travel": 0.052,
+		"mag": "res://assets/weapons/parts/colt_m4a1_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.2,
+			0.015
+		]
+	},
+	"desert_tech_srs": {
+		"body": "res://assets/weapons/parts/desert_tech_srs_body.res",
+		"bolt": "res://assets/weapons/parts/desert_tech_srs_bolt.res",
+		"bolt_travel": 0.062
+	},
+	"famas": {
+		"body": "res://assets/weapons/parts/famas_body.res",
+		"mag": "res://assets/weapons/parts/famas_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.01
+		]
+	},
+	"fn_scar_l": {
+		"body": "res://assets/weapons/parts/fn_scar_l_body.res",
+		"bolt": "res://assets/weapons/parts/fn_scar_l_bolt.res",
+		"bolt_travel": 0.052,
+		"mag": "res://assets/weapons/parts/fn_scar_l_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.2,
+			0.015
+		]
+	},
+	"g36_k": {
+		"body": "res://assets/weapons/parts/g36_k_body.res",
+		"mag": "res://assets/weapons/parts/g36_k_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.015
+		]
+	},
+	"g36c": {
+		"body": "res://assets/weapons/parts/g36c_body.res",
+		"mag": "res://assets/weapons/parts/g36c_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.015
+		]
+	},
+	"glock_17": {
+		"body": "res://assets/weapons/parts/glock_17_body.res",
+		"mag": "res://assets/weapons/parts/glock_17_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.14,
+			0.04
+		],
+		"slide": "res://assets/weapons/parts/glock_17_slide.res",
+		"slide_travel": 0.032
+	},
+	"hk417a2": {
+		"body": "res://assets/weapons/parts/hk417a2_body.res",
+		"mag": "res://assets/weapons/parts/hk417a2_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.2,
+			0.015
+		]
+	},
+	"hk_416": {
+		"body": "res://assets/weapons/parts/hk_416_body.res",
+		"mag": "res://assets/weapons/parts/hk_416_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.015
+		]
+	},
+	"hk_45": {
+		"body": "res://assets/weapons/parts/hk_45_body.res",
+		"slide": "res://assets/weapons/parts/hk_45_slide.res",
+		"slide_travel": 0.032
+	},
+	"hk_g28": {
+		"body": "res://assets/weapons/parts/hk_g28_body.res",
+		"mag": "res://assets/weapons/parts/hk_g28_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.01
+		]
+	},
+	"hk_g3": {
+		"body": "res://assets/weapons/parts/hk_g3_body.res",
+		"mag": "res://assets/weapons/parts/hk_g3_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.19,
+			0.01
+		]
+	},
+	"hk_mark23": {
+		"body": "res://assets/weapons/parts/hk_mark23_body.res",
+		"slide": "res://assets/weapons/parts/hk_mark23_slide.res",
+		"slide_travel": 0.034
+	},
+	"hk_mp7": {
+		"body": "res://assets/weapons/parts/hk_mp7_body.res",
+		"mag": "res://assets/weapons/parts/hk_mp7_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.19,
+			0.03
+		]
+	},
+	"hk_usp": {
+		"body": "res://assets/weapons/parts/hk_usp_body.res",
+		"mag": "res://assets/weapons/parts/hk_usp_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.14,
+			0.035
+		]
+	},
+	"korean_k2": {
+		"body": "res://assets/weapons/parts/korean_k2_body.res",
+		"mag": "res://assets/weapons/parts/korean_k2_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.19,
+			0.01
+		]
+	},
+	"l85a2": {
+		"body": "res://assets/weapons/parts/l85a2_body.res",
+		"mag": "res://assets/weapons/parts/l85a2_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.015
+		]
+	},
+	"luger_p08": {
+		"body": "res://assets/weapons/parts/luger_p08_body.res",
+		"mag": "res://assets/weapons/parts/luger_p08_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.14,
+			0.04
+		]
+	},
+	"m14_classic": {
+		"body": "res://assets/weapons/parts/m14_classic_body.res",
+		"mag": "res://assets/weapons/parts/m14_classic_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.18,
+			0.02
+		]
+	},
+	"m249": {
+		"belt": "res://assets/weapons/parts/m249_belt.res",
+		"body": "res://assets/weapons/parts/m249_body.res",
+		"bolt": "res://assets/weapons/parts/m249_bolt.res",
+		"bolt_travel": 0.056,
+		"cover": "res://assets/weapons/parts/m249_cover.res",
+		"cover_angle": -68.0,
+		"hinge": [
+			0.0,
+			0.14,
+			-0.163
+		],
+		"mag": "res://assets/weapons/parts/m249_mag.res",
+		"mag_drop": [
+			-0.02,
+			-0.22,
+			0.0
+		]
+	},
+	"mk12": {
+		"body": "res://assets/weapons/parts/mk12_body.res",
+		"mag": "res://assets/weapons/parts/mk12_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.18,
+			0.01
+		]
+	},
+	"mk17": {
+		"body": "res://assets/weapons/parts/mk17_body.res",
+		"bolt": "res://assets/weapons/parts/mk17_bolt.res",
+		"bolt_travel": 0.052,
+		"mag": "res://assets/weapons/parts/mk17_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.2,
+			0.015
+		]
+	},
+	"pkm": {
+		"belt": "res://assets/weapons/parts/pkm_belt.res",
+		"body": "res://assets/weapons/parts/pkm_body.res",
+		"cover": "res://assets/weapons/parts/pkm_cover.res",
+		"cover_angle": -65.0,
+		"hinge": [
+			-0.015,
+			0.115,
+			-0.185
+		],
+		"mag": "res://assets/weapons/parts/pkm_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.0
+		]
+	},
+	"sig_saguer_mpx": {
+		"body": "res://assets/weapons/parts/sig_saguer_mpx_body.res",
+		"mag": "res://assets/weapons/parts/sig_saguer_mpx_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.01
+		]
+	},
+	"steyr_aug_a3": {
+		"body": "res://assets/weapons/parts/steyr_aug_a3_body.res",
+		"bolt": "res://assets/weapons/parts/steyr_aug_a3_bolt.res",
+		"bolt_travel": 0.048,
+		"mag": "res://assets/weapons/parts/steyr_aug_a3_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.02
+		]
+	},
+	"svd_drogunov": {
+		"body": "res://assets/weapons/parts/svd_drogunov_body.res",
+		"mag": "res://assets/weapons/parts/svd_drogunov_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.18,
+			0.01
+		]
+	},
+	"ump45": {
+		"body": "res://assets/weapons/parts/ump45_body.res",
+		"bolt": "res://assets/weapons/parts/ump45_bolt.res",
+		"bolt_travel": 0.045,
+		"mag": "res://assets/weapons/parts/ump45_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.21,
+			0.015
+		]
+	},
+	"uzi": {
+		"body": "res://assets/weapons/parts/uzi_body.res",
+		"mag": "res://assets/weapons/parts/uzi_mag.res",
+		"mag_drop": [
+			0.0,
+			-0.17,
+			0.02
+		]
+	},
+	"x13": {
+		"body": "res://assets/weapons/parts/x13_body.res",
+		"slide": "res://assets/weapons/parts/x13_slide.res",
+		"slide_travel": 0.03
+	}
+}

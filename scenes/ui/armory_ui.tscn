@@ -1,0 +1,315 @@
+[gd_scene load_steps=7 format=3 uid="uid://carmoryui01"]
+
+[ext_resource type="Script" path="res://scenes/ui/armory_ui.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_backdrop"]
+bg_color = Color(0.05, 0.06, 0.09, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22, 0.28, 0.36, 0.9)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inspector"]
+bg_color = Color(0.08, 0.1, 0.14, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.25, 0.33, 0.85)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_armory"]
+sky_top_color = Color(0.11, 0.14, 0.2, 1)
+sky_horizon_color = Color(0.18, 0.22, 0.28, 1)
+ground_bottom_color = Color(0.08, 0.09, 0.12, 1)
+ground_horizon_color = Color(0.16, 0.2, 0.25, 1)
+
+[sub_resource type="Sky" id="Sky_armory"]
+sky_material = SubResource("ProceduralSkyMaterial_armory")
+
+[sub_resource type="Environment" id="Environment_armory"]
+background_mode = 2
+sky = SubResource("Sky_armory")
+ambient_light_source = 3
+ambient_light_color = Color(0.9, 0.94, 1, 1)
+ambient_light_energy = 1.15
+
+[node name="ArmoryUI" type="CanvasLayer"]
+layer = 20
+visible = false
+script = ExtResource("1_script")
+
+[node name="Dimmer" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.03, 0.05, 0.72)
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 20
+
+[node name="MainPanel" type="PanelContainer" parent="Margin"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_backdrop")
+
+[node name="RootVBox" type="VBoxContainer" parent="Margin/MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderBar" type="HBoxContainer" parent="Margin/MainPanel/RootVBox"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TitleLabel" type="Label" parent="Margin/MainPanel/RootVBox/HeaderBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "ARMORY"
+
+[node name="SubtitleLabel" type="Label" parent="Margin/MainPanel/RootVBox/HeaderBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.55, 0.72, 0.92, 1)
+theme_override_font_sizes/font_size = 14
+text = "100 Weapons Ready — Slots 1–2: Guns | Slots 3–4: Accessories | Slot 5: Melee"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="SearchEdit" type="LineEdit" parent="Margin/MainPanel/RootVBox/HeaderBar"]
+custom_minimum_size = Vector2(230, 34)
+layout_mode = 2
+placeholder_text = "Search weapons..."
+clear_button_enabled = true
+
+[node name="RandomizeBtn" type="Button" parent="Margin/MainPanel/RootVBox/HeaderBar"]
+custom_minimum_size = Vector2(135, 34)
+layout_mode = 2
+text = "Randomize [X]"
+
+[node name="CloseBtn" type="Button" parent="Margin/MainPanel/RootVBox/HeaderBar"]
+custom_minimum_size = Vector2(130, 34)
+layout_mode = 2
+text = "Deploy [B / Tab]"
+
+[node name="HSep" type="HSeparator" parent="Margin/MainPanel/RootVBox"]
+layout_mode = 2
+
+[node name="BodyHBox" type="HBoxContainer" parent="Margin/MainPanel/RootVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="CategoryScroll" type="ScrollContainer" parent="Margin/MainPanel/RootVBox/BodyHBox"]
+custom_minimum_size = Vector2(185, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+horizontal_scroll_mode = 0
+
+[node name="CategoryList" type="VBoxContainer" parent="Margin/MainPanel/RootVBox/BodyHBox/CategoryScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="GridScroll" type="ScrollContainer" parent="Margin/MainPanel/RootVBox/BodyHBox"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="WeaponGrid" type="GridContainer" parent="Margin/MainPanel/RootVBox/BodyHBox/GridScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="InspectorPanel" type="PanelContainer" parent="Margin/MainPanel/RootVBox/BodyHBox"]
+clip_contents = true
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_inspector")
+
+[node name="InspectorVBox" type="VBoxContainer" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PreviewContainer" type="SubViewportContainer" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(338, 122)
+layout_mode = 2
+size_flags_vertical = 0
+stretch = true
+
+[node name="PreviewViewport" type="SubViewport" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/PreviewContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(338, 122)
+render_target_update_mode = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/PreviewContainer/PreviewViewport"]
+environment = SubResource("Environment_armory")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/PreviewContainer/PreviewViewport"]
+transform = Transform3D(0.707107, -0.454519, 0.541675, 0, 0.766044, 0.642788, -0.707107, -0.454519, 0.541675, 0, 2, 2)
+light_energy = 1.4
+
+[node name="FillLight" type="DirectionalLight3D" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/PreviewContainer/PreviewViewport"]
+transform = Transform3D(-0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, 0.433013, -0.75, 0, 1, -2)
+light_color = Color(0.75, 0.85, 1, 1)
+light_energy = 0.65
+
+[node name="PreviewCamera" type="Camera3D" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/PreviewContainer/PreviewViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.22, 0.95)
+fov = 38.0
+near = 0.02
+
+[node name="PreviewPivot" type="Node3D" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/PreviewContainer/PreviewViewport"]
+
+[node name="PreviewMesh" type="MeshInstance3D" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/PreviewContainer/PreviewViewport/PreviewPivot"]
+cast_shadow = 0
+
+[node name="WeaponTitle" type="Label" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92, 0.65, 1)
+theme_override_font_sizes/font_size = 17
+text = "Colt M4A1"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="WeaponSubtitle" type="Label" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.78, 0.95, 1)
+theme_override_font_sizes/font_size = 11
+text = "RIFLE  |  AUTO  |  GUNS (1-2)"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="StatsLabel" type="Label" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.92, 1)
+theme_override_font_sizes/font_size = 12
+text = "Damage: 32
+Rate: 750 RPM  |  ADS FOV: 60 deg
+Magazine: 30  |  Reload: 2.0s"
+
+[node name="AttachmentsHeader" type="Label" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "ATTACHMENTS:"
+
+[node name="OpticButtons" type="HBoxContainer" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="OpticNoneBtn" type="Button" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/OpticButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Stock"
+clip_text = true
+
+[node name="OpticAimpointBtn" type="Button" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/OpticButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Aimpoint"
+clip_text = true
+
+[node name="OpticAcogBtn" type="Button" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/OpticButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "ACOG"
+clip_text = true
+
+[node name="OpticScopeBtn" type="Button" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/OpticButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Scope"
+clip_text = true
+
+[node name="ModButtons" type="HBoxContainer" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SuppressorBtn" type="Button" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/ModButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Supp: OFF"
+clip_text = true
+
+[node name="LaserBtn" type="Button" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/ModButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Laser: OFF"
+clip_text = true
+
+[node name="UGLBtn" type="Button" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox/ModButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "M203: OFF"
+clip_text = true
+
+[node name="AssignHeader" type="Label" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.9, 0.65, 1)
+theme_override_font_sizes/font_size = 11
+text = "ASSIGN TO SLOT (Click or Press 1–5):"
+
+[node name="SlotButtons" type="VBoxContainer" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 3
+
+[node name="StatusLabel" type="Label" parent="Margin/MainPanel/RootVBox/BodyHBox/InspectorPanel/InspectorVBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 12
+text = ""
+horizontal_alignment = 1
+clip_text = true
+text_overrun_behavior = 3

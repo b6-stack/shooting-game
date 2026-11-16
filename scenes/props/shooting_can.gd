@@ -77,7 +77,7 @@ func respawn() -> void:
 	
 	# Shrink out
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector3.ZERO, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "scale", Vector3.ONE * 0.001, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	await tween.finished
 	
 	linear_velocity = Vector3.ZERO
@@ -88,7 +88,7 @@ func respawn() -> void:
 	PhysicsServer3D.body_set_state(get_rid(), PhysicsServer3D.BODY_STATE_SLEEPING, true)
 	global_transform = initial_transform
 	
-	scale = Vector3.ZERO
+	scale = Vector3.ONE * 0.001
 	var pop_tween = create_tween()
 	pop_tween.tween_property(self, "scale", Vector3.ONE, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	await pop_tween.finished

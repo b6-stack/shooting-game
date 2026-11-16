@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var prompt_text: String = "Press E to Resupply Ammo & Grenades"
+@export var prompt_text: String = "[E] Resupply Ammo & Grenades | [B] Open Armory"
 @export var auto_refill_on_touch: bool = true
 
 @onready var area: Area3D = $Area3D
@@ -13,6 +13,7 @@ var can_refill: bool = true
 const ProceduralAudio = preload("res://scenes/weapon/procedural_audio.gd")
 
 func _ready() -> void:
+	add_to_group("ammo_box")
 	if prompt_label:
 		prompt_label.text = prompt_text
 		prompt_label.visible = false
@@ -23,6 +24,8 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_in_range = body
+		if "is_near_ammo_crate" in body:
+			body.is_near_ammo_crate = true
 		if prompt_label:
 			prompt_label.visible = true
 		if auto_refill_on_touch:
@@ -30,6 +33,8 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_body_exited(body: Node) -> void:
 	if body == player_in_range:
+		if "is_near_ammo_crate" in body:
+			body.is_near_ammo_crate = false
 		player_in_range = null
 		if prompt_label:
 			prompt_label.visible = false

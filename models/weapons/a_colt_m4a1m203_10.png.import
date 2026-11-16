@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xppg3pknbhc8"
 path.s3tc="res://.godot/imported/a_colt_m4a1m203_10.png-5fdaf2e379a70f80932a469044c3c01e.s3tc.ctex"
+path.etc2="res://.godot/imported/a_colt_m4a1m203_10.png-5fdaf2e379a70f80932a469044c3c01e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/weapons/a_colt_m4a1m203_10.png"
-dest_files=["res://.godot/imported/a_colt_m4a1m203_10.png-5fdaf2e379a70f80932a469044c3c01e.s3tc.ctex"]
+dest_files=["res://.godot/imported/a_colt_m4a1m203_10.png-5fdaf2e379a70f80932a469044c3c01e.s3tc.ctex", "res://.godot/imported/a_colt_m4a1m203_10.png-5fdaf2e379a70f80932a469044c3c01e.etc2.ctex"]
 
 [params]
 

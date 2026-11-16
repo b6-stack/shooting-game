@@ -13,9 +13,12 @@ signal spread_changed(spread_ratio: float)
 @export var damage: float = 35.0
 @export var fire_rate: float = 0.1 # Seconds between shots
 @export var max_ammo: int = 30
+@export var max_reserve_mags: int = 5
+var reserve_mags: Array[int] = []
 @export var tactical_reload_time: float = 2.4 # Reload with bullets in chamber
 @export var empty_reload_time: float = 3.5    # Reload from empty
 @export var max_range: float = 200.0
+@export var ads_fov: float = 55.0
 
 # Grenade Launcher (M203)
 @export var max_grenades: int = 4
@@ -51,6 +54,8 @@ var is_aiming: bool = false
 var is_sprinting: bool = false
 var is_crouching: bool = false
 var is_switching: bool = false
+var ads_blend: float = 0.0
+@export var ads_transition_speed: float = 10.0
 
 # Procedural animation offsets
 var recoil_offset: Vector3 = Vector3.ZERO
@@ -75,33 +80,52 @@ const ProceduralAudio = preload("res://scenes/weapon/procedural_audio.gd")
 func _ready() -> void:
 	current_ammo = max_ammo
 	current_grenades = max_grenades
+	init_reserve_ammo()
 	position = hip_position
 	
 	if shoot_sound and shoot_sound.stream == null:
-		shoot_sound.stream = ProceduralAudio.create_gunshot_sample()
+		shoot_sound.stream = ProceduralAudio.get_cached("gunshot")
 	if has_grenade_launcher and grenade_sound and grenade_sound.stream == null:
-		grenade_sound.stream = ProceduralAudio.create_thump_sample()
+		grenade_sound.stream = ProceduralAudio.get_cached("grenade_launcher")
 		
-	snd_mag_out = ProceduralAudio.create_mag_out_sample()
-	snd_mag_in = ProceduralAudio.create_mag_in_sample()
-	snd_bolt_rack = ProceduralAudio.create_bolt_rack_sample()
+	snd_mag_out = ProceduralAudio.get_cached("mag_out")
+	snd_mag_in = ProceduralAudio.get_cached("mag_in")
+	snd_bolt_rack = ProceduralAudio.get_cached("bolt_rack")
+
+func _get_spread_multiplier() -> float:
+	return 1.0
+
+func _get_shooter_exclude_rids() -> Array[RID]:
+	var out: Array[RID] = []
+	var p: Node = get_parent()
+	while p:
+		if p is CollisionObject3D:
+			out.append(p.get_rid())
+		p = p.get_parent()
+	if out.is_empty():
+		var player := get_tree().get_first_node_in_group("player")
+		if player is CollisionObject3D:
+			out.append(player.get_rid())
+	return out
 
 func _process(delta: float) -> void:
 	# Calculate target base spread depending on posture & movement
+	var spread_mult: float = _get_spread_multiplier()
 	var target_base_spread: float
 	if is_aiming:
 		target_base_spread = 0.0
 	elif is_crouching:
-		target_base_spread = base_crouching_spread + (player_velocity_ratio * 0.006)
+		target_base_spread = (base_crouching_spread + (player_velocity_ratio * 0.006)) * spread_mult
 	else:
-		target_base_spread = base_standing_spread + (player_velocity_ratio * movement_spread_add)
+		target_base_spread = (base_standing_spread + (player_velocity_ratio * movement_spread_add)) * spread_mult
 		
 	# Recover spread smoothly toward baseline
 	current_spread = lerpf(current_spread, target_base_spread, delta * spread_recovery_speed)
 	current_spread = clampf(current_spread, 0.0, max_spread)
 	
 	# Emit spread ratio to HUD (0.0 = tightest, 1.0 = widest)
-	var spread_ratio = clampf((current_spread - base_crouching_spread) / (max_spread - base_crouching_spread), 0.0, 1.0)
+	var spread_span = maxf(max_spread - base_crouching_spread, 0.0001)
+	var spread_ratio = clampf((current_spread - base_crouching_spread) / spread_span, 0.0, 1.0)
 	spread_changed.emit(spread_ratio)
 
 	# Smoothly return recoil to zero
@@ -110,14 +134,20 @@ func _process(delta: float) -> void:
 	
 	# Smooth sway recovery
 	sway_offset = sway_offset.lerp(Vector2.ZERO, delta * sway_smooth)
-	
+
+	# Dedicated ADS blend unaffected by bob, sway, or recoil (prevents optic vignette blinking while moving)
+	var effective_aim := is_aiming and not is_reloading and not is_switching and not is_sprinting
+	ads_blend = move_toward(ads_blend, 1.0 if effective_aim else 0.0, delta * ads_transition_speed)
+	if is_switching or is_sprinting:
+		ads_blend = minf(ads_blend, 0.25)
+
 	# Target rest position based on aiming / sprint state
 	var target_base_pos = hip_position
 	var target_base_rot = Vector3.ZERO
 	
-	if is_aiming:
+	if effective_aim:
 		target_base_pos = ads_position
-	elif is_sprinting:
+	elif is_sprinting and not is_aiming:
 		target_base_pos = hip_position + sprint_position_offset
 		target_base_rot = sprint_rotation_euler
 	
@@ -155,6 +185,7 @@ func set_movement_speed_ratio(ratio: float) -> void:
 func holster() -> Tween:
 	is_switching = true
 	is_aiming = false
+	ads_blend = 0.0
 	var tween = create_tween()
 	tween.tween_property(self, "recoil_offset:y", -0.35, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	tween.parallel().tween_property(self, "recoil_rotation:x", deg_to_rad(-20.0), 0.2)
@@ -164,6 +195,7 @@ func holster() -> Tween:
 func draw_weapon() -> Tween:
 	visible = true
 	is_switching = true
+	ads_blend = 0.0
 	recoil_offset.y = -0.35
 	recoil_rotation.x = deg_to_rad(-20.0)
 	
@@ -213,8 +245,14 @@ func shoot(camera: Camera3D) -> bool:
 	perform_raycast(camera)
 
 	# Fire rate cooldown timer
-	get_tree().create_timer(fire_rate).timeout.connect(func(): can_fire = true)
+	get_tree().create_timer(fire_rate).timeout.connect(_on_fire_cooldown)
 	return true
+
+func _on_fire_cooldown() -> void:
+	can_fire = true
+
+func _on_grenade_cooldown() -> void:
+	can_fire_grenade = true
 
 func launch_grenade(camera: Camera3D) -> bool:
 	if not has_grenade_launcher or not can_fire_grenade or is_sprinting or is_switching or current_grenades <= 0:
@@ -236,7 +274,8 @@ func launch_grenade(camera: Camera3D) -> bool:
 		
 	# Spawn Grenade Projectile
 	var grenade = GRENADE_SCENE.instantiate()
-	get_tree().current_scene.add_child(grenade)
+	var spawn_parent = get_tree().current_scene if get_tree().current_scene else get_tree().root
+	spawn_parent.add_child(grenade)
 	
 	# Spawn from grenade launcher muzzle (underslung barrel)
 	var spawn_pos = global_position - global_transform.basis.z * 0.5 - global_transform.basis.y * 0.06
@@ -250,7 +289,7 @@ func launch_grenade(camera: Camera3D) -> bool:
 	grenade.grenade_hit_target.connect(func(pts): hit_target.emit(pts))
 	
 	# Long 3.2s reload cooldown for M203
-	get_tree().create_timer(grenade_cooldown).timeout.connect(func(): can_fire_grenade = true)
+	get_tree().create_timer(grenade_cooldown).timeout.connect(_on_grenade_cooldown)
 	return true
 
 func perform_raycast(camera: Camera3D) -> void:
@@ -272,8 +311,11 @@ func perform_raycast(camera: Camera3D) -> void:
 
 	var target = origin + forward * max_range
 	var query = PhysicsRayQueryParameters3D.create(origin, target)
-	query.collide_with_areas = true
+	query.collide_with_areas = false
 	query.collide_with_bodies = true
+	var ex_rids := _get_shooter_exclude_rids()
+	if not ex_rids.is_empty():
+		query.exclude = ex_rids
 
 	var result = space_state.intersect_ray(query)
 	if result:
@@ -286,16 +328,17 @@ func perform_raycast(camera: Camera3D) -> void:
 
 		# Check if damageable / target
 		var damaged_target = false
+		var shot_dir = (target - origin).normalized()
 		if hit_collider.has_method("take_damage"):
-			hit_collider.take_damage(damage, hit_pos, hit_normal)
+			hit_collider.take_damage(damage, hit_pos, shot_dir)
 			damaged_target = true
 		elif hit_collider.has_meta("target_root"):
 			var root = hit_collider.get_meta("target_root")
 			if root and root.has_method("take_damage"):
-				root.take_damage(damage, hit_pos, hit_normal)
+				root.take_damage(damage, hit_pos, shot_dir)
 				damaged_target = true
 		elif hit_collider.get_parent() and hit_collider.get_parent().has_method("take_damage"):
-			hit_collider.get_parent().take_damage(damage, hit_pos, hit_normal)
+			hit_collider.get_parent().take_damage(damage, hit_pos, shot_dir)
 			damaged_target = true
 
 		# Apply physics impulse if hit object is a RigidBody3D
@@ -309,27 +352,105 @@ func perform_raycast(camera: Camera3D) -> void:
 
 func spawn_impact_effect(pos: Vector3, normal: Vector3) -> void:
 	var impact = IMPACT_EFFECT.instantiate()
-	get_tree().current_scene.add_child(impact)
+	var spawn_parent = get_tree().current_scene if get_tree().current_scene else get_tree().root
+	spawn_parent.add_child(impact)
 	impact.global_position = pos
 	if normal.cross(Vector3.UP).length_squared() > 0.001:
 		impact.look_at(pos + normal, Vector3.UP)
 	else:
 		impact.look_at(pos + normal, Vector3.RIGHT)
 
+func init_reserve_ammo() -> void:
+	reserve_mags.clear()
+	for i in range(max_reserve_mags):
+		reserve_mags.append(max_ammo)
+
+func get_total_reserve_ammo() -> int:
+	var total: int = 0
+	for m in reserve_mags:
+		total += m
+	return total
+
+func get_non_empty_mag_count() -> int:
+	var count: int = 0
+	for m in reserve_mags:
+		if m > 0:
+			count += 1
+	return count
+
+func consolidate_magazines() -> bool:
+	if max_ammo <= 0 or reserve_mags.is_empty():
+		return false
+	var total_bullets := 0
+	for m in reserve_mags:
+		total_bullets += m
+	if total_bullets <= 0:
+		return false
+	var new_mags: Array[int] = []
+	var rem := total_bullets
+	for i in range(max_reserve_mags):
+		if rem >= max_ammo:
+			new_mags.append(max_ammo)
+			rem -= max_ammo
+		elif rem > 0:
+			new_mags.append(rem)
+			rem = 0
+		else:
+			new_mags.append(0)
+	var changed := false
+	for i in range(new_mags.size()):
+		if i >= reserve_mags.size() or new_mags[i] != reserve_mags[i]:
+			changed = true
+			break
+	if changed:
+		reserve_mags = new_mags
+		return true
+	return false
+
+func _apply_tactical_mag_swap() -> void:
+	var best_idx := -1
+	var best_count := -1
+	for i in range(reserve_mags.size()):
+		if reserve_mags[i] > best_count:
+			best_count = reserve_mags[i]
+			best_idx = i
+
+	if best_idx >= 0 and best_count > 0:
+		var new_ammo = reserve_mags[best_idx]
+		if current_ammo > 0:
+			reserve_mags[best_idx] = current_ammo
+		else:
+			reserve_mags.remove_at(best_idx)
+			reserve_mags.append(0)
+		current_ammo = new_ammo
+	elif best_idx >= 0:
+		current_ammo = reserve_mags[best_idx]
+		reserve_mags[best_idx] = 0
+
+	reserve_mags.sort_custom(func(a, b): return a > b)
+
 func refill_all() -> bool:
 	var changed = false
 	if current_ammo < max_ammo:
 		current_ammo = max_ammo
-		fired.emit(current_ammo)
+		changed = true
+	var cur_res = get_total_reserve_ammo()
+	var max_res = max_ammo * max_reserve_mags
+	if cur_res < max_res or reserve_mags.size() < max_reserve_mags:
+		init_reserve_ammo()
 		changed = true
 	if has_grenade_launcher and current_grenades < max_grenades:
 		current_grenades = max_grenades
 		grenade_fired.emit(current_grenades)
 		changed = true
+	if changed:
+		fired.emit(current_ammo)
 	return changed
 
 func reload() -> void:
-	if is_reloading or is_switching or current_ammo >= max_ammo:
+	if max_ammo <= 0 or is_reloading or is_switching or current_ammo >= max_ammo:
+		return
+	if get_total_reserve_ammo() <= 0:
 		return
 	
 	is_reloading = true
@@ -363,7 +484,7 @@ func perform_tactical_reload() -> void:
 	tween.parallel().tween_property(self, "recoil_rotation:x", 0.0, tactical_reload_time * 0.2)
 	
 	await tween.finished
-	current_ammo = max_ammo
+	_apply_tactical_mag_swap()
 	is_reloading = false
 	reloaded.emit(current_ammo)
 
@@ -400,7 +521,7 @@ func perform_empty_reload() -> void:
 	tween.parallel().tween_property(self, "recoil_rotation:x", 0.0, empty_reload_time * 0.18)
 	
 	await tween.finished
-	current_ammo = max_ammo
+	_apply_tactical_mag_swap()
 	is_reloading = false
 	reloaded.emit(current_ammo)
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjkjq7bk481gq"
 path.s3tc="res://.godot/imported/beretta_m9_2.png-f3cbdeeb209a98dd10568e86161bc0d5.s3tc.ctex"
+path.etc2="res://.godot/imported/beretta_m9_2.png-f3cbdeeb209a98dd10568e86161bc0d5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/m9/beretta_m9_2.png"
-dest_files=["res://.godot/imported/beretta_m9_2.png-f3cbdeeb209a98dd10568e86161bc0d5.s3tc.ctex"]
+dest_files=["res://.godot/imported/beretta_m9_2.png-f3cbdeeb209a98dd10568e86161bc0d5.s3tc.ctex", "res://.godot/imported/beretta_m9_2.png-f3cbdeeb209a98dd10568e86161bc0d5.etc2.ctex"]
 
 [params]
 

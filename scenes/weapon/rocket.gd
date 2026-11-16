@@ -14,6 +14,20 @@ const EXPLOSION_EFFECT = preload("res://scenes/effects/explosion.tscn")
 
 @onready var area: Area3D = $Area3D
 
+func set_custom_mesh(mesh_res: Mesh) -> void:
+	if not mesh_res:
+		return
+	var body = get_node_or_null("BodyMesh")
+	if body:
+		body.visible = false
+	var nose = get_node_or_null("NoseCone")
+	if nose:
+		nose.visible = false
+	var custom = MeshInstance3D.new()
+	custom.name = "CustomRocketMesh"
+	custom.mesh = mesh_res
+	add_child(custom)
+
 func _ready() -> void:
 	if area:
 		area.body_entered.connect(_on_impact)
@@ -42,7 +56,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		global_position += step
 		if velocity.length_squared() > 0.1:
-			look_at(global_position + velocity.normalized(), Vector3.UP)
+			var dir := velocity.normalized()
+			var up_v := Vector3.UP if absf(dir.dot(Vector3.UP)) < 0.98 else Vector3.RIGHT
+			look_at(global_position + dir, up_v)
 			
 	lifetime -= delta
 	if lifetime <= 0:
@@ -58,7 +74,8 @@ func explode() -> void:
 	
 	# Spawn explosion effect with larger scale
 	var exp_node = EXPLOSION_EFFECT.instantiate()
-	get_tree().current_scene.add_child(exp_node)
+	var spawn_parent = get_tree().current_scene if get_tree().current_scene else get_tree().root
+	spawn_parent.add_child(exp_node)
 	exp_node.global_position = global_position
 	exp_node.scale = Vector3(1.6, 1.6, 1.6)
 	
@@ -92,7 +109,10 @@ func explode() -> void:
 				processed_roots[obj_id] = true
 				var dist = global_position.distance_to(result.collider.global_position)
 				var falloff = clampf(1.0 - (dist / explosion_radius), 0.25, 1.0)
-				target_obj.take_damage(max_damage * falloff, global_position, Vector3.UP)
+				var blast_dir = (result.collider.global_position - global_position).normalized()
+				if blast_dir.length_squared() < 0.001:
+					blast_dir = Vector3.FORWARD
+				target_obj.take_damage(max_damage * falloff, global_position, blast_dir)
 				targets_hit += 1
 				
 		# Physics blast impulse

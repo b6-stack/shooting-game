@@ -14,6 +14,7 @@ var target_offset: float = 0.0
 var moving_forward: bool = true
 var is_dead: bool = false
 var walk_time: float = 0.0
+var stun_timer: float = 0.0
 
 @onready var visual_root: Node3D = $VisualRoot
 @onready var left_leg: Node3D = $VisualRoot/LeftLeg
@@ -50,7 +51,22 @@ func get_target_rot_y() -> float:
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
-		
+
+	if stun_timer > 0.0:
+		stun_timer = maxf(0.0, stun_timer - delta)
+		velocity = Vector3.ZERO
+		if visual_root:
+			visual_root.rotation.z = sin(stun_timer * 28.0) * 0.14 if stun_timer > 0.0 else 0.0
+		if head:
+			head.rotation.y = sin(stun_timer * 19.0) * 0.42 if stun_timer > 0.0 else 0.0
+		if left_arm:
+			left_arm.rotation.x = (-0.9 + sin(stun_timer * 22.0) * 0.15) if stun_timer > 0.0 else 0.0
+		if right_arm:
+			right_arm.rotation.x = (-0.9 - sin(stun_timer * 22.0) * 0.15) if stun_timer > 0.0 else 0.0
+		if eye_light:
+			eye_light.light_energy = 5.5 if stun_timer > 0.0 else 1.5
+		return
+
 	# Patrol logic along X axis using native velocity and move_and_slide
 	var move_sign = 1.0 if moving_forward else -1.0
 	velocity = Vector3(move_sign * move_speed * patrol_dir_x, 0, 0)
@@ -84,6 +100,11 @@ func _physics_process(delta: float) -> void:
 func turn_robot(target_rot_y: float) -> void:
 	var tween = create_tween()
 	tween.tween_property(visual_root, "rotation:y", target_rot_y, 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+func stun(duration: float = 4.5) -> void:
+	if is_dead:
+		return
+	stun_timer = maxf(stun_timer, duration)
 
 func take_damage(amount: float, _hit_pos: Vector3, _hit_normal: Vector3) -> void:
 	if is_dead:
@@ -120,7 +141,8 @@ func die() -> void:
 		audio_death.play()
 		
 	var exp_node = EXPLOSION_EFFECT.instantiate()
-	get_tree().current_scene.add_child(exp_node)
+	var spawn_parent = get_tree().current_scene if get_tree().current_scene else get_tree().root
+	spawn_parent.add_child(exp_node)
 	exp_node.global_position = global_position + Vector3(0, 0.8, 0)
 	
 	# Hide robot & disable collision
@@ -147,11 +169,16 @@ func respawn() -> void:
 	target_offset = 0.0
 	moving_forward = true
 	is_dead = false
+	stun_timer = 0.0
+	if head:
+		head.rotation.y = 0.0
+	if eye_light:
+		eye_light.light_energy = 1.5
 	
 	if visual_root:
-		visual_root.rotation.y = get_target_rot_y()
+		visual_root.rotation = Vector3(0.0, get_target_rot_y(), 0.0)
 		visual_root.visible = true
-		visual_root.scale = Vector3.ZERO
+		visual_root.scale = Vector3.ONE * 0.001
 		var tween = create_tween()
 		tween.tween_property(visual_root, "scale", Vector3.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		

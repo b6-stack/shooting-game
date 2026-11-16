@@ -1,0 +1,3798 @@
+[
+	{
+		"aabb_size": [
+			0.0412168465554714,
+			0.180006504058838,
+			0.25
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.071343,
+			-0.3975
+		],
+		"category": "pistol",
+		"damage": 24.0,
+		"fire_rate": 0.08,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4425
+		],
+		"id": "baretta_93_r",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/baretta_93_r.res",
+		"muzzle_pos": [
+			0.0,
+			0.0773995518684387,
+			-0.125
+		],
+		"name": "Beretta 93R",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "Baretta_93_R",
+		"viewmodel_scale": 0.82
+	},
+	{
+		"aabb_size": [
+			0.0694326162338257,
+			0.281356692314148,
+			0.840000033378601
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.134133532643318,
+			-0.414000034332275
+		],
+		"category": "rifle",
+		"damage": 32.0,
+		"fire_rate": 0.095,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.454000025987625
+		],
+		"id": "fn_scar_l",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/fn_scar_l.res",
+		"muzzle_pos": [
+			0.0,
+			0.0486133173108101,
+			-0.546000003814697
+		],
+		"name": "FN SCAR-L",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "FN_SCAR_L"
+	},
+	{
+		"aabb_size": [
+			0.0450343191623688,
+			0.298576176166534,
+			0.839999973773956
+		],
+		"ads_fov": 58.0,
+		"ads_pos": [
+			0.0,
+			-0.12634564936161,
+			-0.413999974727631
+		],
+		"category": "rifle",
+		"damage": 30.0,
+		"fire_rate": 0.085,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.45399996638298
+		],
+		"id": "g36_k",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/g36_k.res",
+		"muzzle_pos": [
+			0.0,
+			0.0377524793148041,
+			-0.546000003814697
+		],
+		"name": "HK G36K",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "G36_K"
+	},
+	{
+		"aabb_size": [
+			0.0109431957826018,
+			0.0612998157739639,
+			0.300000011920929
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 80.0,
+		"fire_rate": 0.42,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "gerber_lmf",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/gerber_lmf.res",
+		"muzzle_pos": [
+			0.0,
+			0.00355338025838137,
+			-0.150000005960464
+		],
+		"name": "Gerber LMF II",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Gerber_LMF"
+	},
+	{
+		"aabb_size": [
+			0.0605239942669868,
+			0.339999973773956,
+			0.0611361674964428
+		],
+		"ads_fov": 70.0,
+		"ads_pos": [
+			0.100000001490116,
+			-0.100000001490116,
+			-0.280000001192093
+		],
+		"category": "grenade",
+		"damage": 260.0,
+		"fire_rate": 0.9,
+		"hip_pos": [
+			0.219999998807907,
+			-0.200000002980232,
+			-0.319999992847443
+		],
+		"id": "m24_stick_grenade",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 3.0,
+		"mesh_path": "res://assets/weapons/meshes/m24_stick_grenade.res",
+		"muzzle_pos": [
+			0.0,
+			0.100175902247429,
+			-0.0305680837482214
+		],
+		"name": "M24 Stielhandgranate",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.0,
+		"source_name": "M24_Stick_Grenade",
+		"grenade_type": "frag"
+	},
+	{
+		"aabb_size": [
+			0.0739791989326477,
+			0.197350561618805,
+			0.900000035762787
+		],
+		"ads_fov": 62.0,
+		"ads_pos": [
+			0.0,
+			-0.0766752734780312,
+			-0.535000026226044
+		],
+		"category": "launcher",
+		"damage": 420.0,
+		"fire_rate": 1.0,
+		"hip_pos": [
+			0.239999994635582,
+			-0.180000007152557,
+			-0.555000007152557
+		],
+		"id": "m_72_law",
+		"is_automatic": false,
+		"launcher_mode": "rocket",
+		"max_ammo": 1.0,
+		"mesh_path": "res://assets/weapons/meshes/m_72_law.res",
+		"muzzle_pos": [
+			0.0,
+			0.0176083743572235,
+			-0.585000038146973
+		],
+		"name": "M72 LAW 66mm",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "res://assets/weapons/meshes/proj_law_rocket.res",
+		"reload_time": 3.2,
+		"source_name": "M_72_LAW"
+	},
+	{
+		"aabb_size": [
+			0.217674002051353,
+			0.219451159238815,
+			1.15000009536743
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.108973421156406,
+			-0.562500059604645
+		],
+		"category": "lmg",
+		"damage": 34.0,
+		"fire_rate": 0.055,
+		"hip_pos": [
+			0.219999998807907,
+			-0.189999997615814,
+			-0.592500030994415
+		],
+		"id": "mg42",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 100.0,
+		"mesh_path": "res://assets/weapons/meshes/mg42.res",
+		"muzzle_pos": [
+			0.0,
+			0.0385176166892052,
+			-0.747500061988831
+		],
+		"name": "MG 42",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 3.8,
+		"source_name": "MG42"
+	},
+	{
+		"aabb_size": [
+			0.0541417822241783,
+			0.187287420034409,
+			0.960000038146973
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.0857396349310875,
+			-0.456000030040741
+		],
+		"category": "shotgun",
+		"damage": 18.0,
+		"fire_rate": 0.72,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.496000021696091
+		],
+		"id": "maverick_88",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 6.0,
+		"mesh_path": "res://assets/weapons/meshes/maverick_88.res",
+		"muzzle_pos": [
+			0.0,
+			0.0615092217922211,
+			-0.624000012874603
+		],
+		"name": "Maverick 88",
+		"pack_part": 1.0,
+		"pellet_count": 9.0,
+		"projectile_mesh": "",
+		"reload_time": 2.5,
+		"source_name": "Maverick_88"
+	},
+	{
+		"aabb_size": [
+			0.0325821228325367,
+			0.160770535469055,
+			0.240000009536743
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.066551,
+			-0.3982
+		],
+		"category": "pistol",
+		"damage": 34.0,
+		"fire_rate": 0.13,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4432
+		],
+		"id": "tarran_tactical",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 18.0,
+		"mesh_path": "res://assets/weapons/meshes/tarran_tactical.res",
+		"muzzle_pos": [
+			0.0,
+			0.0655710324645042,
+			-0.120000004768372
+		],
+		"name": "TTI Combat Master",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "Tarran_Tactical",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0333972722291946,
+			0.166773855686188,
+			0.480000048875809
+		],
+		"ads_fov": 64.0,
+		"ads_pos": [
+			0.0,
+			-0.0760099589824677,
+			-0.288000017404556
+		],
+		"category": "smg",
+		"damage": 22.0,
+		"fire_rate": 0.085,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.348000019788742
+		],
+		"id": "uzi",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 32.0,
+		"mesh_path": "res://assets/weapons/meshes/uzi.res",
+		"muzzle_pos": [
+			0.0,
+			0.042700819671154,
+			-0.312000036239624
+		],
+		"name": "IMI UZI",
+		"pack_part": 1.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "UZI"
+	},
+	{
+		"aabb_size": [
+			0.0841735824942589,
+			0.303142488002777,
+			0.939999938011169
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.143384858965874,
+			-0.449000000953674
+		],
+		"category": "rifle",
+		"damage": 32.0,
+		"fire_rate": 0.085,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.488999992609024
+		],
+		"id": "colt_m16a2",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/colt_m16a2.res",
+		"muzzle_pos": [
+			0.0,
+			0.0691317617893219,
+			-0.610999941825867
+		],
+		"name": "Colt M16A2",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "Colt_M16A2"
+	},
+	{
+		"aabb_size": [
+			0.0326294749975204,
+			0.160043478012085,
+			0.280000001192093
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.064698,
+			-0.4126
+		],
+		"category": "pistol",
+		"damage": 65.0,
+		"fire_rate": 0.28,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4576
+		],
+		"id": "desert_eagle",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 7.0,
+		"mesh_path": "res://assets/weapons/meshes/desert_eagle.res",
+		"muzzle_pos": [
+			0.0,
+			0.0631757974624634,
+			-0.140000000596046
+		],
+		"name": "Desert Eagle .50",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "Desert_Eagle",
+		"viewmodel_scale": 0.84
+	},
+	{
+		"aabb_size": [
+			0.0613553263247013,
+			0.230273097753525,
+			0.560000002384186
+		],
+		"ads_fov": 64.0,
+		"ads_pos": [
+			0.0,
+			-0.107245795428753,
+			-0.316000014543533
+		],
+		"category": "smg",
+		"damage": 23.0,
+		"fire_rate": 0.075,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.376000016927719
+		],
+		"id": "hk_mp5",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_mp5.res",
+		"muzzle_pos": [
+			0.0,
+			0.0652616024017334,
+			-0.363999992609024
+		],
+		"name": "HK MP5",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "HK_MP5"
+	},
+	{
+		"aabb_size": [
+			0.0643690526485443,
+			0.280907571315765,
+			0.779999971389771
+		],
+		"ads_fov": 58.0,
+		"ads_pos": [
+			0.0,
+			-0.134058028459549,
+			-0.39300000667572
+		],
+		"category": "rifle",
+		"damage": 31.0,
+		"fire_rate": 0.09,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.43299999833107
+		],
+		"id": "l85a2",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/l85a2.res",
+		"muzzle_pos": [
+			0.0,
+			0.0441549047827721,
+			-0.506999969482422
+		],
+		"name": "SA80 L85A2",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "L85A2"
+	},
+	{
+		"aabb_size": [
+			0.0687116235494614,
+			0.183458864688873,
+			1.03999996185303
+		],
+		"ads_fov": 55.0,
+		"ads_pos": [
+			0.0,
+			-0.0865466222167015,
+			-0.483999967575073
+		],
+		"category": "rifle",
+		"damage": 58.0,
+		"fire_rate": 0.22,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.523999989032745
+		],
+		"id": "m14_classic",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/m14_classic.res",
+		"muzzle_pos": [
+			0.0,
+			0.0644200965762138,
+			-0.675999999046326
+		],
+		"name": "M14 Classic",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.4,
+		"source_name": "M14_Classic"
+	},
+	{
+		"aabb_size": [
+			0.041735365986824,
+			0.144081220030785,
+			0.979999959468842
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.065353199839592,
+			-0.462999999523163
+		],
+		"category": "shotgun",
+		"damage": 19.0,
+		"fire_rate": 0.75,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.503000020980835
+		],
+		"id": "remington870",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 7.0,
+		"mesh_path": "res://assets/weapons/meshes/remington870.res",
+		"muzzle_pos": [
+			0.0,
+			0.0610093101859093,
+			-0.63699996471405
+		],
+		"name": "Remington 870",
+		"pack_part": 2.0,
+		"pellet_count": 9.0,
+		"projectile_mesh": "",
+		"reload_time": 2.6,
+		"source_name": "Remington870"
+	},
+	{
+		"aabb_size": [
+			0.0704024434089661,
+			0.262702226638794,
+			0.880000054836273
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.124246329069138,
+			-0.428000032901764
+		],
+		"category": "rifle",
+		"damage": 31.0,
+		"fire_rate": 0.085,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.468000024557114
+		],
+		"id": "sig556",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/sig556.res",
+		"muzzle_pos": [
+			0.0,
+			0.0712322294712067,
+			-0.572000026702881
+		],
+		"name": "SIG SG 556",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "SIG556"
+	},
+	{
+		"aabb_size": [
+			0.062102198600769,
+			0.287154734134674,
+			0.78000009059906
+		],
+		"ads_fov": 56.0,
+		"ads_pos": [
+			0.0,
+			-0.135951980948448,
+			-0.39300000667572
+		],
+		"category": "rifle",
+		"damage": 31.0,
+		"fire_rate": 0.088,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.43299999833107
+		],
+		"id": "steyr_aug_a3",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/steyr_aug_a3.res",
+		"muzzle_pos": [
+			0.0,
+			0.0556674860417843,
+			-0.507000088691711
+		],
+		"name": "Steyr AUG A3",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "STEYR_AUG_A3"
+	},
+	{
+		"aabb_size": [
+			0.042263425886631,
+			0.166664883494377,
+			1.15000009536743
+		],
+		"ads_fov": 46.0,
+		"ads_pos": [
+			0.0,
+			-0.0753324404358864,
+			-0.522500038146973
+		],
+		"category": "sniper",
+		"damage": 115.0,
+		"fire_rate": 0.36,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.592500030994415
+		],
+		"id": "svd_drogunov",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 10.0,
+		"mesh_path": "res://assets/weapons/meshes/svd_drogunov.res",
+		"muzzle_pos": [
+			0.0,
+			0.0356413275003433,
+			-0.747500061988831
+		],
+		"name": "SVD Dragunov",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.6,
+		"source_name": "SVD_Drogunov"
+	},
+	{
+		"aabb_size": [
+			0.0608928464353085,
+			0.277984350919724,
+			0.579999983310699
+		],
+		"ads_fov": 64.0,
+		"ads_pos": [
+			0.0,
+			-0.130195364356041,
+			-0.323000013828278
+		],
+		"category": "smg",
+		"damage": 28.0,
+		"fire_rate": 0.1,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.383000016212463
+		],
+		"id": "ump45",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 25.0,
+		"mesh_path": "res://assets/weapons/meshes/ump45.res",
+		"muzzle_pos": [
+			0.0,
+			0.0748284980654716,
+			-0.376999974250793
+		],
+		"name": "HK UMP45",
+		"pack_part": 2.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "UMP45"
+	},
+	{
+		"aabb_size": [
+			0.0712238848209381,
+			0.244323223829269,
+			0.879999995231628
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.10784213244915,
+			-0.428000032901764
+		],
+		"category": "rifle",
+		"damage": 38.0,
+		"fire_rate": 0.1,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.468000024557114
+		],
+		"id": "ak_47",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/ak_47.res",
+		"muzzle_pos": [
+			0.0,
+			0.0616546273231506,
+			-0.571999967098236
+		],
+		"name": "AK-47",
+		"pack_part": 3.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "AK-47"
+	},
+	{
+		"aabb_size": [
+			0.0127897961065173,
+			0.0757564753293991,
+			0.339999973773956
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 85.0,
+		"fire_rate": 0.45,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "bowie_knife",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/bowie_knife.res",
+		"muzzle_pos": [
+			0.0,
+			0.00130564183928072,
+			-0.169999986886978
+		],
+		"name": "Bowie Knife",
+		"pack_part": 3.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Bowie_Knife"
+	},
+	{
+		"aabb_size": [
+			0.0638150796294212,
+			0.192463830113411,
+			0.920000016689301
+		],
+		"ads_fov": 64.0,
+		"ads_pos": [
+			0.0,
+			-0.0912319123744965,
+			-0.442000031471252
+		],
+		"category": "shotgun",
+		"damage": 17.0,
+		"fire_rate": 0.26,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.482000023126602
+		],
+		"id": "derya_mk12",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 10.0,
+		"mesh_path": "res://assets/weapons/meshes/derya_mk12.res",
+		"muzzle_pos": [
+			0.0,
+			0.0602305829524994,
+			-0.59799998998642
+		],
+		"name": "Derya MK-12",
+		"pack_part": 3.0,
+		"pellet_count": 8.0,
+		"projectile_mesh": "",
+		"reload_time": 2.4,
+		"source_name": "Derya_MK12"
+	},
+	{
+		"aabb_size": [
+			0.0348584428429604,
+			0.111470088362694,
+			0.339999973773956
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.046407,
+			-0.4446
+		],
+		"category": "pistol",
+		"damage": 110.0,
+		"fire_rate": 0.6,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4896
+		],
+		"id": "flintlock",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 1.0,
+		"mesh_path": "res://assets/weapons/meshes/flintlock.res",
+		"muzzle_pos": [
+			0.0,
+			0.0246708281338215,
+			-0.169999986886978
+		],
+		"name": "Flintlock Pistol",
+		"pack_part": 3.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "Flintlock",
+		"viewmodel_scale": 0.88
+	},
+	{
+		"aabb_size": [
+			0.0464042872190475,
+			0.207343995571136,
+			0.520000040531158
+		],
+		"ads_fov": 62.0,
+		"ads_pos": [
+			0.0,
+			-0.0884219408035278,
+			-0.301999986171722
+		],
+		"category": "smg",
+		"damage": 23.0,
+		"fire_rate": 0.066,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.361999988555908
+		],
+		"id": "fn_p90",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 50.0,
+		"mesh_path": "res://assets/weapons/meshes/fn_p90.res",
+		"muzzle_pos": [
+			0.0,
+			0.0005413694307208,
+			-0.338000059127808
+		],
+		"name": "FN P90",
+		"pack_part": 3.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.3,
+		"source_name": "FN_P90"
+	},
+	{
+		"aabb_size": [
+			0.0358569398522377,
+			0.15666064620018,
+			0.229999989271164
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.064784,
+			-0.3939
+		],
+		"category": "pistol",
+		"damage": 28.0,
+		"fire_rate": 0.13,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4389
+		],
+		"id": "glock_17",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 17.0,
+		"mesh_path": "res://assets/weapons/meshes/glock_17.res",
+		"muzzle_pos": [
+			0.0,
+			0.0579606480896473,
+			-0.114999994635582
+		],
+		"name": "Glock 17",
+		"pack_part": 3.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.6,
+		"source_name": "Glock_17",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0323023088276386,
+			0.0632364228367805,
+			0.319999992847443
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 82.0,
+		"fire_rate": 0.42,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "kabar_1250",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/kabar_1250.res",
+		"muzzle_pos": [
+			0.0,
+			0.0140537256374955,
+			-0.159999996423721
+		],
+		"name": "KA-BAR 1250",
+		"pack_part": 3.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Kabar_1250"
+	},
+	{
+		"aabb_size": [
+			0.0461812540888786,
+			0.275601804256439,
+			0.349999964237213
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.131404176354408,
+			-0.242499977350235
+		],
+		"category": "smg",
+		"damage": 21.0,
+		"fire_rate": 0.075,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.302499979734421
+		],
+		"id": "tec_9",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 32.0,
+		"mesh_path": "res://assets/weapons/meshes/tec_9.res",
+		"muzzle_pos": [
+			0.0,
+			0.108582831919193,
+			-0.22749999165535
+		],
+		"name": "TEC-9",
+		"pack_part": 3.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "Tec_9"
+	},
+	{
+		"aabb_size": [
+			0.0733108446002007,
+			0.254345774650574,
+			0.779999971389771
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.122105829417706,
+			-0.39300000667572
+		],
+		"category": "shotgun",
+		"damage": 19.0,
+		"fire_rate": 0.72,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.43299999833107
+		],
+		"id": "utas_uts15",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 14.0,
+		"mesh_path": "res://assets/weapons/meshes/utas_uts15.res",
+		"muzzle_pos": [
+			0.0,
+			0.0514189824461937,
+			-0.506999969482422
+		],
+		"name": "UTAS UTS-15",
+		"pack_part": 3.0,
+		"pellet_count": 10.0,
+		"projectile_mesh": "",
+		"reload_time": 2.8,
+		"source_name": "Utas_UTS15"
+	},
+	{
+		"aabb_size": [
+			0.0451572835445404,
+			0.19490048289299,
+			1.03999996185303
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.0904070362448692,
+			-0.483999967575073
+		],
+		"category": "shotgun",
+		"damage": 21.0,
+		"fire_rate": 0.22,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.523999989032745
+		],
+		"id": "weatherby_orion",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 2.0,
+		"mesh_path": "res://assets/weapons/meshes/weatherby_orion.res",
+		"muzzle_pos": [
+			0.0,
+			0.0884241461753845,
+			-0.675999999046326
+		],
+		"name": "Weatherby Orion O/U",
+		"pack_part": 3.0,
+		"pellet_count": 12.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "Weatherby_Orion"
+	},
+	{
+		"aabb_size": [
+			0.0575926303863525,
+			0.238953948020935,
+			0.679999947547913
+		],
+		"ads_fov": 62.0,
+		"ads_pos": [
+			0.0,
+			-0.113480977714062,
+			-0.357999980449677
+		],
+		"category": "rifle",
+		"damage": 29.0,
+		"fire_rate": 0.082,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.397999972105026
+		],
+		"id": "aks74u",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/aks74u.res",
+		"muzzle_pos": [
+			0.0,
+			0.0699875354766846,
+			-0.441999971866608
+		],
+		"name": "AKS-74U",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.0,
+		"source_name": "AKS74U"
+	},
+	{
+		"aabb_size": [
+			0.094596266746521,
+			0.159286975860596,
+			1.17999994754791
+		],
+		"ads_fov": 40.0,
+		"ads_pos": [
+			0.0,
+			-0.0716434866189957,
+			-0.532999932765961
+		],
+		"category": "sniper",
+		"damage": 185.0,
+		"fire_rate": 1.1,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.602999925613403
+		],
+		"id": "aw_338",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 5.0,
+		"mesh_path": "res://assets/weapons/meshes/aw_338.res",
+		"muzzle_pos": [
+			0.0,
+			0.0534064471721649,
+			-0.767000019550323
+		],
+		"name": "AW .338 Magnum",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.8,
+		"source_name": "AW_338"
+	},
+	{
+		"aabb_size": [
+			0.0296342130750418,
+			0.0636769086122513,
+			0.300000011920929
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 75.0,
+		"fire_rate": 0.36,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "halmak_komando",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/halmak_komando.res",
+		"muzzle_pos": [
+			0.0,
+			-0.0008318955078721,
+			-0.150000005960464
+		],
+		"name": "Komando Dagger",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Halmak_Komando"
+	},
+	{
+		"aabb_size": [
+			0.0378835573792458,
+			0.163011878728867,
+			0.230000004172325
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.065945,
+			-0.3916
+		],
+		"category": "pistol",
+		"damage": 34.0,
+		"fire_rate": 0.15,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4366
+		],
+		"id": "hk_usp",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 12.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_usp.res",
+		"muzzle_pos": [
+			0.0,
+			0.0559410899877548,
+			-0.115000002086163
+		],
+		"name": "HK USP .45",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "HK_USP",
+		"viewmodel_scale": 0.84
+	},
+	{
+		"aabb_size": [
+			0.0350162461400032,
+			0.155686169862747,
+			0.200000002980232
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.064365,
+			-0.381
+		],
+		"category": "pistol",
+		"damage": 26.0,
+		"fire_rate": 0.14,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.426
+		],
+		"id": "makarov",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 8.0,
+		"mesh_path": "res://assets/weapons/meshes/makarov.res",
+		"muzzle_pos": [
+			0.0,
+			0.0579660087823868,
+			-0.100000001490116
+		],
+		"name": "PM Makarov",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.6,
+		"source_name": "Makarov",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.217633903026581,
+			0.262530624866486,
+			1.12000000476837
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.137366816401482,
+			-0.552000045776367
+		],
+		"category": "lmg",
+		"damage": 38.0,
+		"fire_rate": 0.085,
+		"hip_pos": [
+			0.219999998807907,
+			-0.189999997615814,
+			-0.582000017166138
+		],
+		"id": "pkm",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 100.0,
+		"mesh_path": "res://assets/weapons/meshes/pkm.res",
+		"muzzle_pos": [
+			0.0,
+			0.0737932324409485,
+			-0.727999985218048
+		],
+		"name": "PKM 7.62mm",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 4.0,
+		"source_name": "PKM"
+	},
+	{
+		"aabb_size": [
+			0.0316893234848976,
+			0.166712790727615,
+			0.199999988079071
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.069107,
+			-0.381
+		],
+		"category": "pistol",
+		"damage": 38.0,
+		"fire_rate": 0.18,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.426
+		],
+		"id": "pss_assassin_pistol",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 6.0,
+		"mesh_path": "res://assets/weapons/meshes/pss_assassin_pistol.res",
+		"muzzle_pos": [
+			0.0,
+			0.0626529902219772,
+			-0.0999999940395355
+		],
+		"name": "PSS Silent Pistol",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "PSS_Assassin_Pistol",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0561349913477898,
+			0.321345031261444,
+			0.560000002384186
+		],
+		"ads_fov": 62.0,
+		"ads_pos": [
+			0.0,
+			-0.155672520399094,
+			-0.315999984741211
+		],
+		"category": "smg",
+		"damage": 24.0,
+		"fire_rate": 0.07,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.375999987125397
+		],
+		"id": "sig_saguer_mpx",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/sig_saguer_mpx.res",
+		"muzzle_pos": [
+			0.0,
+			0.0846785679459572,
+			-0.364000022411346
+		],
+		"name": "SIG MPX",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "Sig_Saguer_Mpx"
+	},
+	{
+		"aabb_size": [
+			0.0424686260521412,
+			0.154152646660805,
+			0.229999989271164
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.060743,
+			-0.3893
+		],
+		"category": "pistol",
+		"damage": 30.0,
+		"fire_rate": 0.14,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4343
+		],
+		"id": "sig_saguer_p226",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 15.0,
+		"mesh_path": "res://assets/weapons/meshes/sig_saguer_p226.res",
+		"muzzle_pos": [
+			0.0,
+			0.0641580671072006,
+			-0.114999994635582
+		],
+		"name": "SIG P226",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "Sig_Saguer_P226",
+		"viewmodel_scale": 0.82
+	},
+	{
+		"aabb_size": [
+			0.0338596478104591,
+			0.174602895975113,
+			0.580000042915344
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 110.0,
+		"fire_rate": 0.62,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "tactic_shovel",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/tactic_shovel.res",
+		"muzzle_pos": [
+			0.0,
+			0.00164171040523797,
+			-0.290000021457672
+		],
+		"name": "Tactical Shovel",
+		"pack_part": 4.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Tactic_Shovel"
+	},
+	{
+		"aabb_size": [
+			0.191007867455482,
+			0.335223764181137,
+			0.959999978542328
+		],
+		"ads_fov": 64.0,
+		"ads_pos": [
+			0.0,
+			-0.144444674253464,
+			-0.455999970436096
+		],
+		"category": "shotgun",
+		"damage": 16.0,
+		"fire_rate": 0.2,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.495999962091446
+		],
+		"id": "aa12",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/aa12.res",
+		"muzzle_pos": [
+			0.0,
+			0.0402396321296692,
+			-0.624000012874603
+		],
+		"name": "AA-12 Auto Shotgun",
+		"pack_part": 5.0,
+		"pellet_count": 8.0,
+		"projectile_mesh": "",
+		"reload_time": 2.6,
+		"source_name": "AA12"
+	},
+	{
+		"aabb_size": [
+			0.0580477491021156,
+			0.225524336099625,
+			0.950000166893005
+		],
+		"ads_fov": 58.0,
+		"ads_pos": [
+			0.0,
+			-0.102174259722233,
+			-0.45250004529953
+		],
+		"category": "rifle",
+		"damage": 44.0,
+		"fire_rate": 0.14,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.49250003695488
+		],
+		"id": "armalite_ar10",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/armalite_ar10.res",
+		"muzzle_pos": [
+			0.0,
+			0.0423888601362705,
+			-0.617500126361847
+		],
+		"name": "ArmaLite AR-10",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "Armalite_AR10"
+	},
+	{
+		"aabb_size": [
+			0.0653186589479446,
+			0.189240828156471,
+			0.979999959468842
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.0884370729327202,
+			-0.462999999523163
+		],
+		"category": "shotgun",
+		"damage": 18.0,
+		"fire_rate": 0.28,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.503000020980835
+		],
+		"id": "benelli_m4",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 7.0,
+		"mesh_path": "res://assets/weapons/meshes/benelli_m4.res",
+		"muzzle_pos": [
+			0.0,
+			0.0751985460519791,
+			-0.63699996471405
+		],
+		"name": "Benelli M4 Super 90",
+		"pack_part": 5.0,
+		"pellet_count": 9.0,
+		"projectile_mesh": "",
+		"reload_time": 2.4,
+		"source_name": "Benelli_M4"
+	},
+	{
+		"aabb_size": [
+			0.0907267183065414,
+			0.1741943359375,
+			0.940000116825104
+		],
+		"ads_fov": 42.0,
+		"ads_pos": [
+			0.0,
+			-0.0790971666574478,
+			-0.449000060558319
+		],
+		"category": "sniper",
+		"damage": 175.0,
+		"fire_rate": 1.0,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.519000053405762
+		],
+		"id": "desert_tech_srs",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 6.0,
+		"mesh_path": "res://assets/weapons/meshes/desert_tech_srs.res",
+		"muzzle_pos": [
+			0.0,
+			0.056511040776968,
+			-0.611000061035156
+		],
+		"name": "Desert Tech SRS",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.7,
+		"source_name": "Desert_Tech_SRS"
+	},
+	{
+		"aabb_size": [
+			0.0527459606528282,
+			0.306610643863678,
+			0.759999990463257
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.148305311799049,
+			-0.386000007390976
+		],
+		"category": "rifle",
+		"damage": 28.0,
+		"fire_rate": 0.065,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.425999999046326
+		],
+		"id": "famas",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 25.0,
+		"mesh_path": "res://assets/weapons/meshes/famas.res",
+		"muzzle_pos": [
+			0.0,
+			0.0255511868745089,
+			-0.493999987840652
+		],
+		"name": "FAMAS F1",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "Famas"
+	},
+	{
+		"aabb_size": [
+			0.0507989265024662,
+			0.175338000059128,
+			0.230000019073486
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.066042,
+			-0.3847
+		],
+		"category": "pistol",
+		"damage": 21.0,
+		"fire_rate": 0.072,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4297
+		],
+		"id": "x13",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 24.0,
+		"mesh_path": "res://assets/weapons/meshes/x13.res",
+		"muzzle_pos": [
+			0.0,
+			0.0579130575060844,
+			-0.115000009536743
+		],
+		"name": "X13 Auto",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "X13",
+		"viewmodel_scale": 0.78
+	},
+	{
+		"aabb_size": [
+			0.0368413552641869,
+			0.151624470949173,
+			0.239999994635582
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.062619,
+			-0.3982
+		],
+		"category": "pistol",
+		"damage": 38.0,
+		"fire_rate": 0.16,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4432
+		],
+		"id": "government",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 7.0,
+		"mesh_path": "res://assets/weapons/meshes/government.res",
+		"muzzle_pos": [
+			0.0,
+			0.0545627921819687,
+			-0.119999997317791
+		],
+		"name": "Colt M1911 .45",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "Government",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0356369875371456,
+			0.153870910406113,
+			0.240000009536743
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.063584,
+			-0.3982
+		],
+		"category": "pistol",
+		"damage": 29.0,
+		"fire_rate": 0.15,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4432
+		],
+		"id": "luger_p08",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 8.0,
+		"mesh_path": "res://assets/weapons/meshes/luger_p08.res",
+		"muzzle_pos": [
+			0.0,
+			0.0617796741425991,
+			-0.120000004768372
+		],
+		"name": "Luger P08",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "Luger_P08",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0902243703603745,
+			0.159999996423721,
+			0.0857258141040802
+		],
+		"ads_fov": 70.0,
+		"ads_pos": [
+			0.100000001490116,
+			-0.100000001490116,
+			-0.280000001192093
+		],
+		"category": "grenade",
+		"damage": 250.0,
+		"fire_rate": 0.9,
+		"hip_pos": [
+			0.219999998807907,
+			-0.200000002980232,
+			-0.319999992847443
+		],
+		"id": "mk2_handbomb",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 3.0,
+		"mesh_path": "res://assets/weapons/meshes/mk2_handbomb.res",
+		"muzzle_pos": [
+			0.0,
+			-0.0206457525491714,
+			-0.0428629070520401
+		],
+		"name": "MK2 Frag Grenade",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.0,
+		"source_name": "MK2_Handbomb",
+		"grenade_type": "frag"
+	},
+	{
+		"aabb_size": [
+			0.0310303252190351,
+			0.0310303270816803,
+			0.549999952316284
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 75.0,
+		"fire_rate": 0.38,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "telescopic_baton",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/telescopic_baton.res",
+		"muzzle_pos": [
+			0.0,
+			4.037316614e-08,
+			-0.274999976158142
+		],
+		"name": "Telescopic Baton",
+		"pack_part": 5.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Telescopic_Baton"
+	},
+	{
+		"aabb_size": [
+			0.0575038194656372,
+			0.185891002416611,
+			1.17999994754791
+		],
+		"ads_fov": 52.0,
+		"ads_pos": [
+			0.0,
+			-0.0849454998970032,
+			-0.532999992370605
+		],
+		"category": "sniper",
+		"damage": 150.0,
+		"fire_rate": 0.92,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.602999985218048
+		],
+		"id": "91_30_mosin_nagant",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 5.0,
+		"mesh_path": "res://assets/weapons/meshes/91_30_mosin_nagant.res",
+		"muzzle_pos": [
+			0.0,
+			0.0455150008201599,
+			-0.766999959945679
+		],
+		"name": "Mosin-Nagant 91/30",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.6,
+		"source_name": "91_30_Mosin_Nagant"
+	},
+	{
+		"aabb_size": [
+			0.0363256298005581,
+			0.161249727010727,
+			0.240000009536743
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.066757,
+			-0.3982
+		],
+		"category": "pistol",
+		"damage": 29.0,
+		"fire_rate": 0.14,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4432
+		],
+		"id": "beretta_m9",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 15.0,
+		"mesh_path": "res://assets/weapons/meshes/beretta_m9.res",
+		"muzzle_pos": [
+			0.0,
+			0.0638004690408707,
+			-0.120000004768372
+		],
+		"name": "Beretta M9",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.6,
+		"source_name": "Beretta_M9",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0375935658812523,
+			0.156564444303513,
+			0.229999989271164
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.064743,
+			-0.3939
+		],
+		"category": "pistol",
+		"damage": 30.0,
+		"fire_rate": 0.13,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4389
+		],
+		"id": "cz_75",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 16.0,
+		"mesh_path": "res://assets/weapons/meshes/cz_75.res",
+		"muzzle_pos": [
+			0.0,
+			0.0557305701076984,
+			-0.114999994635582
+		],
+		"name": "CZ 75",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "CZ_75",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0433354526758194,
+			0.174200966954231,
+			0.229999989271164
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.06728,
+			-0.387
+		],
+		"category": "pistol",
+		"damage": 36.0,
+		"fire_rate": 0.16,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.432
+		],
+		"id": "hk_45",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 10.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_45.res",
+		"muzzle_pos": [
+			0.0,
+			0.0597425028681755,
+			-0.114999994635582
+		],
+		"name": "HK45 Tactical",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.7,
+		"source_name": "HK_45",
+		"viewmodel_scale": 0.8
+	},
+	{
+		"aabb_size": [
+			0.0470860116183758,
+			0.158864736557007,
+			0.259999990463257
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.061146,
+			-0.399
+		],
+		"category": "pistol",
+		"damage": 42.0,
+		"fire_rate": 0.17,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.444
+		],
+		"id": "hk_mark23",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 12.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_mark23.res",
+		"muzzle_pos": [
+			0.0,
+			0.0533942952752113,
+			-0.129999995231628
+		],
+		"name": "HK Mark 23 SOCOM",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "HK_Mark23",
+		"viewmodel_scale": 0.8
+	},
+	{
+		"aabb_size": [
+			0.0654292106628418,
+			0.231554239988327,
+			0.860000014305115
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.110777117311955,
+			-0.421000003814697
+		],
+		"category": "rifle",
+		"damage": 32.0,
+		"fire_rate": 0.078,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.460999995470047
+		],
+		"id": "lvoa_c",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/lvoa_c.res",
+		"muzzle_pos": [
+			0.0,
+			0.0800694227218628,
+			-0.559000015258789
+		],
+		"name": "LVOA-C Carbine",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.0,
+		"source_name": "LVOA-C"
+	},
+	{
+		"aabb_size": [
+			0.403265416622162,
+			0.358453273773193,
+			1.01999998092651
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.165999993681908,
+			-0.517000019550323
+		],
+		"category": "lmg",
+		"damage": 30.0,
+		"fire_rate": 0.075,
+		"hip_pos": [
+			0.219999998807907,
+			-0.189999997615814,
+			-0.546999990940094
+		],
+		"id": "m249",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 150.0,
+		"mesh_path": "res://assets/weapons/meshes/m249.res",
+		"muzzle_pos": [
+			0.0,
+			0.112816996872425,
+			-0.662999987602234
+		],
+		"name": "M249 SAW",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 4.2,
+		"source_name": "M249"
+	},
+	{
+		"aabb_size": [
+			0.181257337331772,
+			0.24041149020195,
+			0.78000009059906
+		],
+		"ads_fov": 62.0,
+		"ads_pos": [
+			0.0,
+			-0.0982057452201843,
+			-0.493000000715256
+		],
+		"category": "launcher",
+		"damage": 220.0,
+		"fire_rate": 0.45,
+		"hip_pos": [
+			0.239999994635582,
+			-0.180000007152557,
+			-0.513000011444092
+		],
+		"id": "mikor_mgl",
+		"is_automatic": false,
+		"launcher_mode": "grenade_launcher",
+		"max_ammo": 6.0,
+		"mesh_path": "res://assets/weapons/meshes/mikor_mgl.res",
+		"muzzle_pos": [
+			0.0,
+			0.0497503057122231,
+			-0.507000088691711
+		],
+		"name": "Milkor MGL 40mm",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 3.4,
+		"source_name": "Mikor_MGL"
+	},
+	{
+		"aabb_size": [
+			0.0421884581446648,
+			0.143168821930885,
+			0.239999979734421
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.057611,
+			-0.3958
+		],
+		"category": "pistol",
+		"damage": 44.0,
+		"fire_rate": 0.24,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4408
+		],
+		"id": "nagant_m1895",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 7.0,
+		"mesh_path": "res://assets/weapons/meshes/nagant_m1895.res",
+		"muzzle_pos": [
+			0.0,
+			0.057061780244112,
+			-0.11999998986721
+		],
+		"name": "Nagant M1895",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "Nagant_M1895",
+		"viewmodel_scale": 0.84
+	},
+	{
+		"aabb_size": [
+			0.0298296716064215,
+			0.122236341238022,
+			0.300000011920929
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.049902,
+			-0.427
+		],
+		"category": "pistol",
+		"damage": 58.0,
+		"fire_rate": 0.55,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.472
+		],
+		"id": "weldrod_mark1",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 6.0,
+		"mesh_path": "res://assets/weapons/meshes/weldrod_mark1.res",
+		"muzzle_pos": [
+			0.0,
+			0.0412847325205803,
+			-0.149999991059303
+		],
+		"name": "Welrod Mk I",
+		"pack_part": 6.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "Weldrod_Mark1",
+		"viewmodel_scale": 0.88
+	},
+	{
+		"aabb_size": [
+			0.0478249900043011,
+			0.338242292404175,
+			0.540000021457672
+		],
+		"ads_fov": 64.0,
+		"ads_pos": [
+			0.0,
+			-0.16380350291729,
+			-0.308999955654144
+		],
+		"category": "smg",
+		"damage": 25.0,
+		"fire_rate": 0.078,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.36899995803833
+		],
+		"id": "arp_9",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/arp_9.res",
+		"muzzle_pos": [
+			0.0,
+			0.0970670208334923,
+			-0.351000070571899
+		],
+		"name": "ARP-9 9mm",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "ARP-9"
+	},
+	{
+		"aabb_size": [
+			0.0821728855371475,
+			0.328113079071045,
+			0.999999940395355
+		],
+		"ads_fov": 45.0,
+		"ads_pos": [
+			0.0,
+			-0.156056523323059,
+			-0.469999969005585
+		],
+		"category": "sniper",
+		"damage": 95.0,
+		"fire_rate": 0.26,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.539999961853027
+		],
+		"id": "hk_g28",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_g28.res",
+		"muzzle_pos": [
+			0.0,
+			0.0088861295953393,
+			-0.649999976158142
+		],
+		"name": "HK G28 DMR",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.3,
+		"source_name": "HK_G28"
+	},
+	{
+		"aabb_size": [
+			0.029720202088356,
+			0.0581815727055073,
+			0.319999992847443
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 85.0,
+		"fire_rate": 0.42,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "kabar_tanto",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/kabar_tanto.res",
+		"muzzle_pos": [
+			0.0,
+			0.0147827854380012,
+			-0.160000011324883
+		],
+		"name": "KA-BAR Tanto",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Kabar_Tanto"
+	},
+	{
+		"aabb_size": [
+			0.0518270172178745,
+			0.230556651949883,
+			0.879999935626984
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.106837406754494,
+			-0.427999973297119
+		],
+		"category": "rifle",
+		"damage": 31.0,
+		"fire_rate": 0.085,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.467999964952469
+		],
+		"id": "korean_k2",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/korean_k2.res",
+		"muzzle_pos": [
+			0.0,
+			0.0524974428117275,
+			-0.571999967098236
+		],
+		"name": "Daewoo K2",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "Korean_K2"
+	},
+	{
+		"aabb_size": [
+			0.0344331115484238,
+			0.0312759578227997,
+			0.340000003576279
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 95.0,
+		"fire_rate": 0.44,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "m48_cyclone",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/m48_cyclone.res",
+		"muzzle_pos": [
+			0.0,
+			0.00024685167591087,
+			-0.170000001788139
+		],
+		"name": "M48 Cyclone",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "M48_Cyclone"
+	},
+	{
+		"aabb_size": [
+			0.0142238736152649,
+			0.121979132294655,
+			0.259999990463257
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 78.0,
+		"fire_rate": 0.32,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "m48_falcon",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/m48_falcon.res",
+		"muzzle_pos": [
+			0.0,
+			-0.033959724009037,
+			-0.129999995231628
+		],
+		"name": "M48 Falcon Karambit",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "M48_Falcon"
+	},
+	{
+		"aabb_size": [
+			0.141368180513382,
+			0.312577962875366,
+			1.14999997615814
+		],
+		"ads_fov": 56.0,
+		"ads_pos": [
+			0.0379999987781048,
+			-0.123082488775253,
+			-0.622500002384186
+		],
+		"category": "launcher",
+		"damage": 520.0,
+		"fire_rate": 1.0,
+		"hip_pos": [
+			0.239999994635582,
+			-0.180000007152557,
+			-0.642499983310699
+		],
+		"id": "mk_153_smaw",
+		"is_automatic": false,
+		"launcher_mode": "rocket",
+		"max_ammo": 1.0,
+		"mesh_path": "res://assets/weapons/meshes/mk_153_smaw.res",
+		"muzzle_pos": [
+			0.0,
+			0.089841365814209,
+			-0.747500002384186
+		],
+		"name": "Mk 153 SMAW",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "res://assets/weapons/meshes/proj_smaw_rocket.res",
+		"reload_time": 3.6,
+		"source_name": "MK_153_SMAW"
+	},
+	{
+		"aabb_size": [
+			0.54984986782074,
+			0.949999988079071,
+			0.142138600349426
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.0,
+			-0.228000000119209,
+			-0.400000005960464
+		],
+		"category": "shield",
+		"damage": 85.0,
+		"fire_rate": 0.65,
+		"hip_pos": [
+			-0.239999994635582,
+			-0.219999998807907,
+			-0.439999997615814
+		],
+		"id": "riot_shield",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/riot_shield.res",
+		"muzzle_pos": [
+			0.0,
+			0.32086592912674,
+			-0.0710693001747131
+		],
+		"name": "Ballistic Riot Shield",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "Riot_Shield"
+	},
+	{
+		"aabb_size": [
+			0.0268596783280373,
+			0.519999980926514,
+			0.253316044807434
+		],
+		"ads_fov": 72.0,
+		"ads_pos": [
+			0.140000000596046,
+			-0.159999996423721,
+			-0.300000011920929
+		],
+		"category": "melee",
+		"damage": 125.0,
+		"fire_rate": 0.58,
+		"hip_pos": [
+			0.239999994635582,
+			-0.219999998807907,
+			-0.340000003576279
+		],
+		"id": "sog_hawk",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 0.0,
+		"mesh_path": "res://assets/weapons/meshes/sog_hawk.res",
+		"muzzle_pos": [
+			0.0,
+			0.226330563426018,
+			-0.126658007502556
+		],
+		"name": "SOG Tomahawk",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 0.0,
+		"source_name": "SOG_HAWK"
+	},
+	{
+		"aabb_size": [
+			0.0565246418118477,
+			0.160086393356323,
+			0.880000054836273
+		],
+		"ads_fov": 50.0,
+		"ads_pos": [
+			0.0,
+			-0.0720431953668594,
+			-0.428000032901764
+		],
+		"category": "sniper",
+		"damage": 56.0,
+		"fire_rate": 0.11,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.498000025749207
+		],
+		"id": "vss_vintorez",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/vss_vintorez.res",
+		"muzzle_pos": [
+			0.0,
+			0.0704262852668762,
+			-0.572000026702881
+		],
+		"name": "VSS Vintorez",
+		"pack_part": 7.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "VSS_Vintorez"
+	},
+	{
+		"aabb_size": [
+			0.0777296870946884,
+			0.241548269987106,
+			1.27999997138977
+		],
+		"ads_fov": 38.0,
+		"ads_pos": [
+			0.0,
+			-0.112774141132832,
+			-0.568000018596649
+		],
+		"category": "sniper",
+		"damage": 280.0,
+		"fire_rate": 0.78,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.638000011444092
+		],
+		"id": "barret_m82a1",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 10.0,
+		"mesh_path": "res://assets/weapons/meshes/barret_m82a1.res",
+		"muzzle_pos": [
+			0.0,
+			0.029480617493391,
+			-0.831999957561493
+		],
+		"name": "Barrett M82A1 .50",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 3.2,
+		"source_name": "Barret_M82A1"
+	},
+	{
+		"aabb_size": [
+			0.0485716313123703,
+			0.180792540311813,
+			1.01999998092651
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.0834695547819138,
+			-0.476999998092651
+		],
+		"category": "shotgun",
+		"damage": 18.0,
+		"fire_rate": 0.29,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.517000019550323
+		],
+		"id": "benelli_m2",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 8.0,
+		"mesh_path": "res://assets/weapons/meshes/benelli_m2.res",
+		"muzzle_pos": [
+			0.0,
+			0.0671596527099609,
+			-0.662999987602234
+		],
+		"name": "Benelli M2",
+		"pack_part": 8.0,
+		"pellet_count": 9.0,
+		"projectile_mesh": "",
+		"reload_time": 2.4,
+		"source_name": "Benelli_M2"
+	},
+	{
+		"aabb_size": [
+			0.0528480857610703,
+			0.250375151634216,
+			0.580000042915344
+		],
+		"ads_fov": 63.0,
+		"ads_pos": [
+			0.0,
+			-0.119382455945015,
+			-0.323000013828278
+		],
+		"category": "smg",
+		"damage": 24.0,
+		"fire_rate": 0.068,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.383000016212463
+		],
+		"id": "cz_scorpion_evo",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/cz_scorpion_evo.res",
+		"muzzle_pos": [
+			0.0,
+			0.0529339611530304,
+			-0.377000033855438
+		],
+		"name": "CZ Scorpion EVO 3",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "CZ_Scorpion_Evo"
+	},
+	{
+		"aabb_size": [
+			0.0537291094660759,
+			0.295573472976685,
+			0.720000088214874
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.136463940143585,
+			-0.37200003862381
+		],
+		"category": "rifle",
+		"damage": 29.0,
+		"fire_rate": 0.08,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.41200003027916
+		],
+		"id": "g36c",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/g36c.res",
+		"muzzle_pos": [
+			0.0,
+			0.0529704727232456,
+			-0.468000054359436
+		],
+		"name": "HK G36C",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.0,
+		"source_name": "G36C"
+	},
+	{
+		"aabb_size": [
+			0.0782122388482094,
+			0.19744411110878,
+			1.15000009536743
+		],
+		"ads_fov": 40.0,
+		"ads_pos": [
+			0.0,
+			-0.0907220467925072,
+			-0.522500038146973
+		],
+		"category": "sniper",
+		"damage": 170.0,
+		"fire_rate": 1.0,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.592500030994415
+		],
+		"id": "jng_90",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 10.0,
+		"mesh_path": "res://assets/weapons/meshes/jng_90.res",
+		"muzzle_pos": [
+			0.0,
+			0.0896346494555473,
+			-0.747500061988831
+		],
+		"name": "MKE JNG-90",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.8,
+		"source_name": "JNG_90"
+	},
+	{
+		"aabb_size": [
+			0.0587426424026489,
+			0.31510716676712,
+			0.580000042915344
+		],
+		"ads_fov": 63.0,
+		"ads_pos": [
+			0.0,
+			-0.151868209242821,
+			-0.323000013828278
+		],
+		"category": "smg",
+		"damage": 24.0,
+		"fire_rate": 0.052,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.383000016212463
+		],
+		"id": "krissvector",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 33.0,
+		"mesh_path": "res://assets/weapons/meshes/krissvector.res",
+		"muzzle_pos": [
+			0.0,
+			0.0739216357469559,
+			-0.377000033855438
+		],
+		"name": "KRISS Vector",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.9,
+		"source_name": "KrissVector"
+	},
+	{
+		"aabb_size": [
+			0.0679170340299606,
+			0.167787998914719,
+			1.11999988555908
+		],
+		"ads_fov": 42.0,
+		"ads_pos": [
+			0.0,
+			-0.0758939981460571,
+			-0.51199996471405
+		],
+		"category": "sniper",
+		"damage": 160.0,
+		"fire_rate": 0.98,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.581999957561493
+		],
+		"id": "m24_apply",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 5.0,
+		"mesh_path": "res://assets/weapons/meshes/m24_apply.res",
+		"muzzle_pos": [
+			0.0,
+			0.0571043938398361,
+			-0.727999925613403
+		],
+		"name": "M24 SWS",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.6,
+		"source_name": "M24_Apply"
+	},
+	{
+		"aabb_size": [
+			0.32217675447464,
+			0.269262820482254,
+			1.29999995231628
+		],
+		"ads_fov": 36.0,
+		"ads_pos": [
+			0.0,
+			-0.126631394028664,
+			-0.574999988079071
+		],
+		"category": "sniper",
+		"damage": 240.0,
+		"fire_rate": 1.2,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.644999980926514
+		],
+		"id": "m200",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 7.0,
+		"mesh_path": "res://assets/weapons/meshes/m200.res",
+		"muzzle_pos": [
+			0.0,
+			0.0904399454593658,
+			-0.844999969005585
+		],
+		"name": "CheyTac M200 .408",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 3.1,
+		"source_name": "M200"
+	},
+	{
+		"aabb_size": [
+			0.0816891044378281,
+			0.204722166061401,
+			1.01999998092651
+		],
+		"ads_fov": 48.0,
+		"ads_pos": [
+			0.0,
+			-0.0943610817193985,
+			-0.476999998092651
+		],
+		"category": "sniper",
+		"damage": 92.0,
+		"fire_rate": 0.25,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.546999990940094
+		],
+		"id": "sr_25_apply",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/sr_25_apply.res",
+		"muzzle_pos": [
+			0.0,
+			0.0594833381474018,
+			-0.662999987602234
+		],
+		"name": "Knight's SR-25",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.3,
+		"source_name": "SR_25_Apply"
+	},
+	{
+		"aabb_size": [
+			0.0631021112203598,
+			0.188103079795837,
+			1.10000014305115
+		],
+		"ads_fov": 44.0,
+		"ads_pos": [
+			0.0,
+			-0.0860515385866165,
+			-0.505000054836273
+		],
+		"category": "sniper",
+		"damage": 155.0,
+		"fire_rate": 0.94,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.575000047683716
+		],
+		"id": "steyr_ssg69",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 5.0,
+		"mesh_path": "res://assets/weapons/meshes/steyr_ssg69.res",
+		"muzzle_pos": [
+			0.0,
+			0.0693623274564743,
+			-0.715000092983246
+		],
+		"name": "Steyr SSG 69",
+		"pack_part": 8.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.6,
+		"source_name": "STEYR_SSG69"
+	},
+	{
+		"aabb_size": [
+			0.149418666958809,
+			0.337256371974945,
+			1.15000009536743
+		],
+		"ads_fov": 40.0,
+		"ads_pos": [
+			0.0,
+			-0.160628169775009,
+			-0.522500097751617
+		],
+		"category": "sniper",
+		"damage": 175.0,
+		"fire_rate": 0.9,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.59250009059906
+		],
+		"id": "blaser_r93",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 5.0,
+		"mesh_path": "res://assets/weapons/meshes/blaser_r93.res",
+		"muzzle_pos": [
+			0.0,
+			0.054168026894331,
+			-0.747500002384186
+		],
+		"name": "Blaser R93 Tactical",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.6,
+		"source_name": "Blaser_R93"
+	},
+	{
+		"aabb_size": [
+			0.0330617055296898,
+			0.163556128740311,
+			0.25
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.067749,
+			-0.4025
+		],
+		"category": "pistol",
+		"damage": 22.0,
+		"fire_rate": 0.065,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4475
+		],
+		"id": "cz_75_auto",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 26.0,
+		"mesh_path": "res://assets/weapons/meshes/cz_75_auto.res",
+		"muzzle_pos": [
+			0.0,
+			0.0667624473571777,
+			-0.125
+		],
+		"name": "CZ 75 Auto",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "CZ_75_Auto",
+		"viewmodel_scale": 0.86
+	},
+	{
+		"aabb_size": [
+			0.0605318509042263,
+			0.231982231140137,
+			0.880000054836273
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.110463239252567,
+			-0.428000032901764
+		],
+		"category": "rifle",
+		"damage": 31.0,
+		"fire_rate": 0.085,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.468000024557114
+		],
+		"id": "hk33",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/hk33.res",
+		"muzzle_pos": [
+			0.0,
+			0.0512066036462784,
+			-0.572000026702881
+		],
+		"name": "HK33 5.56",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.1,
+		"source_name": "HK33"
+	},
+	{
+		"aabb_size": [
+			0.0798243433237076,
+			0.287938177585602,
+			0.919999957084656
+		],
+		"ads_fov": 58.0,
+		"ads_pos": [
+			0.0,
+			-0.138969093561172,
+			-0.441999971866608
+		],
+		"category": "rifle",
+		"damage": 42.0,
+		"fire_rate": 0.11,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.481999963521957
+		],
+		"id": "hk417a2",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/hk417a2.res",
+		"muzzle_pos": [
+			0.0,
+			0.0520919486880302,
+			-0.59799998998642
+		],
+		"name": "HK417 A2",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "HK417A2"
+	},
+	{
+		"aabb_size": [
+			0.0832651853561401,
+			0.300421863794327,
+			0.839999973773956
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.144643932580948,
+			-0.413999974727631
+		],
+		"category": "rifle",
+		"damage": 33.0,
+		"fire_rate": 0.078,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.45399996638298
+		],
+		"id": "hk_416",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_416.res",
+		"muzzle_pos": [
+			0.0,
+			0.0758159831166267,
+			-0.546000003814697
+		],
+		"name": "HK416",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.0,
+		"source_name": "HK_416"
+	},
+	{
+		"aabb_size": [
+			0.0450364500284195,
+			0.213374197483063,
+			0.980000019073486
+		],
+		"ads_fov": 58.0,
+		"ads_pos": [
+			0.0,
+			-0.101018331944942,
+			-0.462999999523163
+		],
+		"category": "rifle",
+		"damage": 43.0,
+		"fire_rate": 0.12,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.503000020980835
+		],
+		"id": "hk_g3",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_g3.res",
+		"muzzle_pos": [
+			0.0,
+			0.0472495928406715,
+			-0.637000024318695
+		],
+		"name": "HK G3A3",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.3,
+		"source_name": "HK_G3"
+	},
+	{
+		"aabb_size": [
+			0.0597393289208412,
+			0.198809608817101,
+			0.939999938011169
+		],
+		"ads_fov": 50.0,
+		"ads_pos": [
+			0.0,
+			-0.0914048030972481,
+			-0.449000000953674
+		],
+		"category": "sniper",
+		"damage": 78.0,
+		"fire_rate": 0.2,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.518999993801117
+		],
+		"id": "mk12",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/mk12.res",
+		"muzzle_pos": [
+			0.0,
+			0.0665756538510323,
+			-0.610999941825867
+		],
+		"name": "Mk 12 SPR",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "MK12"
+	},
+	{
+		"aabb_size": [
+			0.0641320049762726,
+			0.241573542356491,
+			0.919999957084656
+		],
+		"ads_fov": 58.0,
+		"ads_pos": [
+			0.0,
+			-0.114359825849533,
+			-0.441999971866608
+		],
+		"category": "rifle",
+		"damage": 44.0,
+		"fire_rate": 0.11,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.481999963521957
+		],
+		"id": "mk17",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/mk17.res",
+		"muzzle_pos": [
+			0.0,
+			0.0357501767575741,
+			-0.59799998998642
+		],
+		"name": "FN SCAR-H Mk17",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.2,
+		"source_name": "MK17"
+	},
+	{
+		"aabb_size": [
+			0.0981946736574173,
+			0.286650717258453,
+			1.13999998569489
+		],
+		"ads_fov": 42.0,
+		"ads_pos": [
+			0.0,
+			-0.135325372219086,
+			-0.519000053405762
+		],
+		"category": "sniper",
+		"damage": 165.0,
+		"fire_rate": 1.0,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.589000046253204
+		],
+		"id": "remington_scoplu_applied",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 5.0,
+		"mesh_path": "res://assets/weapons/meshes/remington_scoplu_applied.res",
+		"muzzle_pos": [
+			0.0,
+			0.0248337909579277,
+			-0.740999937057495
+		],
+		"name": "Remington 700 Scoped",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.7,
+		"source_name": "Remington_Scoplu_Applied"
+	},
+	{
+		"aabb_size": [
+			0.123396925628185,
+			0.2803795337677,
+			1.01999998092651
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.118189767003059,
+			-0.577000021934509
+		],
+		"category": "launcher",
+		"damage": 480.0,
+		"fire_rate": 1.0,
+		"hip_pos": [
+			0.239999994635582,
+			-0.180000007152557,
+			-0.597000002861023
+		],
+		"id": "rpg7",
+		"is_automatic": false,
+		"launcher_mode": "rocket",
+		"max_ammo": 1.0,
+		"mesh_path": "res://assets/weapons/meshes/rpg7.res",
+		"muzzle_pos": [
+			0.0,
+			0.0630692318081856,
+			-0.662999987602234
+		],
+		"name": "RPG-7",
+		"pack_part": 9.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "res://assets/weapons/meshes/proj_rpg7_rocket.res",
+		"reload_time": 3.2,
+		"source_name": "RPG7"
+	},
+	{
+		"aabb_size": [
+			0.0182660929858685,
+			0.0742015093564987,
+			0.109999999403954
+		],
+		"ads_fov": 68.0,
+		"ads_pos": [
+			0.0,
+			-0.0341007560491562,
+			-0.27
+		],
+		"category": "pistol",
+		"damage": 14.0,
+		"fire_rate": 0.18,
+		"hip_pos": [
+			0.15,
+			-0.145,
+			-0.305
+		],
+		"id": "2mm_kalibri",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 8.0,
+		"mesh_path": "res://assets/weapons/meshes/2mm_kalibri.res",
+		"muzzle_pos": [
+			0.0,
+			0.0257034357637167,
+			-0.0549999997019768
+		],
+		"name": "2mm Kolibri",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.4,
+		"source_name": "2MM_Kalibri",
+		"viewmodel_scale": 1.0
+	},
+	{
+		"aabb_size": [
+			0.0364692956209183,
+			0.177364751696587,
+			0.230000019073486
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.07026,
+			-0.3893
+		],
+		"category": "pistol",
+		"damage": 31.0,
+		"fire_rate": 0.13,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4343
+		],
+		"id": "canit_tp9_elite_combat",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 18.0,
+		"mesh_path": "res://assets/weapons/meshes/canit_tp9_elite_combat.res",
+		"muzzle_pos": [
+			0.0,
+			0.0693474560976028,
+			-0.115000009536743
+		],
+		"name": "Canik TP9 Elite",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.6,
+		"source_name": "Canit_TP9_Elite_Combat",
+		"viewmodel_scale": 0.82
+	},
+	{
+		"aabb_size": [
+			0.0788275673985481,
+			0.302373170852661,
+			0.819999873638153
+		],
+		"ads_fov": 60.0,
+		"ads_pos": [
+			0.0,
+			-0.13331612944603,
+			-0.406999945640564
+		],
+		"category": "rifle",
+		"damage": 32.0,
+		"fire_rate": 0.08,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.446999937295914
+		],
+		"id": "colt_m4a1",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 30.0,
+		"mesh_path": "res://assets/weapons/meshes/colt_m4a1.res",
+		"muzzle_pos": [
+			0.0,
+			0.0696412101387978,
+			-0.532999932765961
+		],
+		"name": "Colt M4A1",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.0,
+		"source_name": "Colt_M4A1"
+	},
+	{
+		"aabb_size": [
+			0.0524569302797318,
+			0.336792260408401,
+			0.479999959468842
+		],
+		"ads_fov": 63.0,
+		"ads_pos": [
+			0.0,
+			-0.162076473236084,
+			-0.287999987602234
+		],
+		"category": "smg",
+		"damage": 23.0,
+		"fire_rate": 0.063,
+		"hip_pos": [
+			0.189999997615814,
+			-0.159999996423721,
+			-0.34799998998642
+		],
+		"id": "hk_mp7",
+		"is_automatic": true,
+		"launcher_mode": "",
+		"max_ammo": 40.0,
+		"mesh_path": "res://assets/weapons/meshes/hk_mp7.res",
+		"muzzle_pos": [
+			0.0,
+			0.0728112682700157,
+			-0.311999976634979
+		],
+		"name": "HK MP7",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 1.8,
+		"source_name": "HK_MP7"
+	},
+	{
+		"aabb_size": [
+			0.0467566400766373,
+			0.259563505649567,
+			0.719999969005585
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.124780021607876,
+			-0.371999979019165
+		],
+		"category": "shotgun",
+		"damage": 18.0,
+		"fire_rate": 0.68,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.411999970674515
+		],
+		"id": "kel_tec_ks7",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 7.0,
+		"mesh_path": "res://assets/weapons/meshes/kel_tec_ks7.res",
+		"muzzle_pos": [
+			0.0,
+			0.0364561975002289,
+			-0.467999994754791
+		],
+		"name": "Kel-Tec KS7",
+		"pack_part": 10.0,
+		"pellet_count": 9.0,
+		"projectile_mesh": "",
+		"reload_time": 2.5,
+		"source_name": "Kel_Tec_KS7"
+	},
+	{
+		"aabb_size": [
+			0.0535722859203815,
+			0.205121010541916,
+			1.04999995231628
+		],
+		"ads_fov": 56.0,
+		"ads_pos": [
+			0.0,
+			-0.0962258875370026,
+			-0.487500011920929
+		],
+		"category": "rifle",
+		"damage": 72.0,
+		"fire_rate": 0.26,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.527500033378601
+		],
+		"id": "m1_grand",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 8.0,
+		"mesh_path": "res://assets/weapons/meshes/m1_grand.res",
+		"muzzle_pos": [
+			0.0,
+			0.0801218748092651,
+			-0.682499945163727
+		],
+		"name": "M1 Garand",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.4,
+		"source_name": "M1_Grand"
+	},
+	{
+		"aabb_size": [
+			0.0791807919740677,
+			0.18305242061615,
+			0.980000019073486
+		],
+		"ads_fov": 48.0,
+		"ads_pos": [
+			0.0,
+			-0.0835262089967728,
+			-0.462999999523163
+		],
+		"category": "sniper",
+		"damage": 95.0,
+		"fire_rate": 0.24,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.532999992370605
+		],
+		"id": "m14_ebr",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 20.0,
+		"mesh_path": "res://assets/weapons/meshes/m14_ebr.res",
+		"muzzle_pos": [
+			0.0,
+			0.0655783265829086,
+			-0.637000024318695
+		],
+		"name": "Mk 14 EBR",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.3,
+		"source_name": "M14_EBR"
+	},
+	{
+		"aabb_size": [
+			0.135900110006332,
+			0.294398486614227,
+			1.34999990463257
+		],
+		"ads_fov": 52.0,
+		"ads_pos": [
+			0.0,
+			-0.139199256896973,
+			-0.592499971389771
+		],
+		"category": "sniper",
+		"damage": 340.0,
+		"fire_rate": 1.45,
+		"hip_pos": [
+			0.209999993443489,
+			-0.180000007152557,
+			-0.662499964237213
+		],
+		"id": "mauser_1918t_gewehr",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 1.0,
+		"mesh_path": "res://assets/weapons/meshes/mauser_1918t_gewehr.res",
+		"muzzle_pos": [
+			0.0,
+			0.127837851643562,
+			-0.877499938011169
+		],
+		"name": "Mauser 1918 T-Gewehr",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.5,
+		"source_name": "Mauser_1918T_Gewehr"
+	},
+	{
+		"aabb_size": [
+			0.0509313270449638,
+			0.0755716413259506,
+			0.35999995470047
+		],
+		"ads_fov": 66.0,
+		"ads_pos": [
+			0.0,
+			-0.030612,
+			-0.4534
+		],
+		"category": "pistol",
+		"damage": 125.0,
+		"fire_rate": 0.8,
+		"hip_pos": [
+			0.165,
+			-0.155,
+			-0.4984
+		],
+		"id": "mosin_nagant_pistol",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 5.0,
+		"mesh_path": "res://assets/weapons/meshes/mosin_nagant_pistol.res",
+		"muzzle_pos": [
+			0.0,
+			0.0290891341865063,
+			-0.179999977350235
+		],
+		"name": "Mosin Obrez Pistol",
+		"pack_part": 10.0,
+		"pellet_count": 1.0,
+		"projectile_mesh": "",
+		"reload_time": 2.3,
+		"source_name": "Mosin_Nagant_Pistol",
+		"viewmodel_scale": 0.88
+	},
+	{
+		"aabb_size": [
+			0.0857273414731026,
+			0.193909421563149,
+			0.920000016689301
+		],
+		"ads_fov": 65.0,
+		"ads_pos": [
+			0.0,
+			-0.0909916311502457,
+			-0.442000031471252
+		],
+		"category": "shotgun",
+		"damage": 19.0,
+		"fire_rate": 0.72,
+		"hip_pos": [
+			0.200000002980232,
+			-0.180000007152557,
+			-0.482000023126602
+		],
+		"id": "mossberg_500_swat",
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 6.0,
+		"mesh_path": "res://assets/weapons/meshes/mossberg_500_swat.res",
+		"muzzle_pos": [
+			0.0,
+			0.0616632252931595,
+			-0.59799998998642
+		],
+		"name": "Mossberg 500 SWAT",
+		"pack_part": 10.0,
+		"pellet_count": 9.0,
+		"projectile_mesh": "",
+		"reload_time": 2.5,
+		"source_name": "Mossberg_500_SWAT"
+	},
+	{
+		"id": "smoke_grenade",
+		"name": "M18 Smoke Grenade",
+		"category": "grenade",
+		"grenade_type": "smoke",
+		"damage": 0.0,
+		"fire_rate": 0.9,
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 3,
+		"pellet_count": 1,
+		"reload_time": 1.0,
+		"ads_fov": 68.0,
+		"aabb_size": [
+			0.064,
+			0.142,
+			0.073
+		],
+		"hip_pos": [
+			0.2,
+			-0.19,
+			-0.32
+		],
+		"ads_pos": [
+			0.08,
+			-0.1,
+			-0.28
+		],
+		"muzzle_pos": [
+			0.0,
+			0.02,
+			-0.04
+		],
+		"mesh_path": "res://assets/weapons/meshes/smoke_grenade.res",
+		"projectile_mesh": ""
+	},
+	{
+		"id": "flash_grenade",
+		"name": "M84 Flashbang",
+		"category": "grenade",
+		"grenade_type": "flash",
+		"damage": 5.0,
+		"fire_rate": 0.85,
+		"is_automatic": false,
+		"launcher_mode": "",
+		"max_ammo": 3,
+		"pellet_count": 1,
+		"reload_time": 1.0,
+		"ads_fov": 68.0,
+		"aabb_size": [
+			0.054,
+			0.131,
+			0.061
+		],
+		"hip_pos": [
+			0.2,
+			-0.19,
+			-0.32
+		],
+		"ads_pos": [
+			0.08,
+			-0.1,
+			-0.28
+		],
+		"muzzle_pos": [
+			0.0,
+			0.02,
+			-0.04
+		],
+		"mesh_path": "res://assets/weapons/meshes/flash_grenade.res",
+		"projectile_mesh": ""
+	}
+]

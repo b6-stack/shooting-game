@@ -31,11 +31,20 @@ func take_damage(amount: float, _hit_position: Vector3 = Vector3.ZERO, _hit_norm
 	
 	# Flash white on hit
 	if plate_mesh and plate_mesh.get_active_material(0):
-		var mat: StandardMaterial3D = plate_mesh.get_active_material(0)
-		var original_color = mat.albedo_color
-		var flash_tween = create_tween()
-		flash_tween.tween_property(mat, "albedo_color", Color.WHITE, 0.05)
-		flash_tween.tween_property(mat, "albedo_color", original_color, 0.1)
+		var mat := plate_mesh.get_active_material(0)
+		if mat is StandardMaterial3D:
+			var std_mat := mat as StandardMaterial3D
+			var original_color := std_mat.albedo_color
+			var flash_tween := create_tween()
+			flash_tween.tween_property(std_mat, "albedo_color", Color.WHITE, 0.05)
+			flash_tween.tween_property(std_mat, "albedo_color", original_color, 0.1)
+		elif mat is ShaderMaterial:
+			var sh_mat := mat as ShaderMaterial
+			var orig_param = sh_mat.get_shader_parameter("albedo_color")
+			var original_color: Color = orig_param if (orig_param is Color) else Color(0.9, 0.85, 0.8, 1.0)
+			var flash_tween := create_tween()
+			flash_tween.tween_method(func(c: Color): sh_mat.set_shader_parameter("albedo_color", c), original_color, Color.WHITE, 0.05)
+			flash_tween.tween_method(func(c: Color): sh_mat.set_shader_parameter("albedo_color", c), Color.WHITE, original_color, 0.1)
 	
 	if current_health <= 0:
 		knock_down()

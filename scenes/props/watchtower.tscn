@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3]
+
+[sub_resource type="StandardMaterial3D" id="Mat_Steel"]
+albedo_color = Color(0.24, 0.26, 0.28, 1)
+roughness = 0.75
+metallic = 0.65
+
+[sub_resource type="StandardMaterial3D" id="Mat_Wood"]
+albedo_color = Color(0.48, 0.42, 0.35, 1)
+roughness = 0.90
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_Pillar"]
+material = SubResource("Mat_Steel")
+top_radius = 0.12
+bottom_radius = 0.14
+height = 6.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_Platform"]
+material = SubResource("Mat_Wood")
+size = Vector3(4.0, 0.25, 4.0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_Roof"]
+material = SubResource("Mat_Steel")
+size = Vector3(4.4, 0.15, 4.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_Railing"]
+material = SubResource("Mat_Steel")
+size = Vector3(3.8, 1.0, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_TowerBase"]
+size = Vector3(4.0, 6.0, 4.0)
+
+[node name="Watchtower" type="StaticBody3D"]
+
+[node name="CollisionBase" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0, 0)
+shape = SubResource("BoxShape3D_TowerBase")
+
+[node name="Pillar_FL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 3.0, -1.8)
+mesh = SubResource("CylinderMesh_Pillar")
+
+[node name="Pillar_FR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 3.0, -1.8)
+mesh = SubResource("CylinderMesh_Pillar")
+
+[node name="Pillar_BL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 3.0, 1.8)
+mesh = SubResource("CylinderMesh_Pillar")
+
+[node name="Pillar_BR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 3.0, 1.8)
+mesh = SubResource("CylinderMesh_Pillar")
+
+[node name="Platform" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9, 0)
+mesh = SubResource("BoxMesh_Platform")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.4, 0)
+mesh = SubResource("BoxMesh_Roof")
+
+[node name="Railing_F" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, -1.9)
+mesh = SubResource("BoxMesh_Railing")
+
+[node name="Railing_B" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 1.9)
+mesh = SubResource("BoxMesh_Railing")
+
+[node name="Railing_L" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -1.9, 6.5, 0)
+mesh = SubResource("BoxMesh_Railing")
+
+[node name="Railing_R" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 1.9, 6.5, 0)
+mesh = SubResource("BoxMesh_Railing")

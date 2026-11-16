@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://chudscene01"]
+[gd_scene load_steps=4 format=3 uid="uid://chudscene01"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
+[ext_resource type="Script" path="res://scenes/ui/scope_overlay.gd" id="2_scope"]
+[ext_resource type="Script" path="res://scenes/ui/nvg_overlay.gd" id="3_nvg"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -13,6 +15,28 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_hud")
+
+[node name="NVGOverlay" type="Control" parent="HUDControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_nvg")
+
+[node name="ScopeOverlay" type="Control" parent="HUDControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_scope")
 
 [node name="Crosshair" type="Control" parent="HUDControl"]
 layout_mode = 1
@@ -177,8 +201,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -240.0
-offset_top = -100.0
+offset_left = -690.0
+offset_top = -175.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_right = 28
@@ -186,25 +210,49 @@ theme_override_constants/margin_bottom = 24
 
 [node name="VBox" type="VBoxContainer" parent="HUDControl/BottomRight"]
 layout_mode = 2
+alignment = 2
 
 [node name="WeaponName" type="Label" parent="HUDControl/BottomRight/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
-theme_override_font_sizes/font_size = 14
-text = "M4A1 5.56mm"
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 15
+text = "[1] Colt M4A1"
 horizontal_alignment = 2
+
+[node name="MagazineRack" type="HBoxContainer" parent="HUDControl/BottomRight/VBox"]
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 5
 
 [node name="AmmoLabel" type="Label" parent="HUDControl/BottomRight/VBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 28
 text = "30 / 30"
 horizontal_alignment = 2
 
 [node name="GrenadeLabel" type="Label" parent="HUDControl/BottomRight/VBox"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.8, 0.3, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 14
 text = "M203 40mm: 4 / 4"
+horizontal_alignment = 2
+
+[node name="SlotsLabel" type="Label" parent="HUDControl/BottomRight/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.9, 0.96, 0.95)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 12
+text = "[1] M4A1 | [2] M9 | [3] RPG-7 | [4] MK2 | [5] Tanto"
 horizontal_alignment = 2
 
 [node name="BottomLeft" type="MarginContainer" parent="HUDControl"]
@@ -212,21 +260,23 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -110.0
-offset_right = 440.0
+offset_top = -115.0
+offset_right = 530.0
 grow_vertical = 0
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_bottom = 20
 
 [node name="ControlsInfo" type="Label" parent="HUDControl/BottomLeft"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 0.85)
+theme_override_colors/font_color = Color(0.9, 0.93, 0.96, 0.92)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/font_size = 13
 text = "WASD: Move | Shift: Sprint | C / Ctrl: Crouch | Space: Jump
-1 / 2 / 3 / Q / Scroll: Switch Weapon (M4A1 / M9 / AT4 Rocket)
-LMB: Fire | RMB: Aim Down Sights (ADS)
-F / MMB / G: Launch M203 Grenade (when M4 equipped)
-R: Reload | E: Resupply Crate | ESC: Toggle Mouse"
+1–5 / Q / Scroll: Switch Slot | B / Tab: Armory | L: Laser | N: NVG
+LMB: Fire / Slash / Bash | RMB / Z: ADS / Scope | F / MMB: M203
+R: Reload (Hold: Pack Mags) | E: Door / Crate | F1: Mobile HUD | ESC: Mouse"
 
 [node name="TopRight" type="MarginContainer" parent="HUDControl"]
 layout_mode = 1
@@ -245,3 +295,14 @@ theme_override_colors/font_color = Color(0.2, 1, 0.4, 0.9)
 theme_override_font_sizes/font_size = 14
 text = "60 FPS | GPU"
 horizontal_alignment = 2
+
+[node name="FlashOverlay" type="ColorRect" parent="HUDControl"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)

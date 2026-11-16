@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/weapons/materials/pack_palette_tex.res" id="1_jqywg"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_jqywg")
+roughness = 0.9

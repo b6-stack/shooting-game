@@ -18,6 +18,6 @@ func launch_debris(impulse: Vector3) -> void:
 
 func despawn() -> void:
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector3.ZERO, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "scale", Vector3.ONE * 0.001, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	await tween.finished
 	queue_free()

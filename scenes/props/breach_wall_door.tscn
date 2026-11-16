@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://bq5yl04d6lopc"]
+
+[ext_resource type="Script" path="res://scenes/props/door.gd" id="1_door"]
+[ext_resource type="PackedScene" uid="uid://b8sbflkrx65c7" path="res://scenes/target/target.tscn" id="2_target"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_concrete"]
+albedo_color = Color(0.58, 0.56, 0.52, 1)
+roughness = 0.88
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frame"]
+albedo_color = Color(0.18, 0.2, 0.23, 1)
+metallic = 0.65
+roughness = 0.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_door_wood"]
+albedo_color = Color(0.46, 0.31, 0.2, 1)
+roughness = 0.72
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brass"]
+albedo_color = Color(0.78, 0.66, 0.3, 1)
+metallic = 0.85
+roughness = 0.28
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall_side"]
+material = SubResource("StandardMaterial3D_concrete")
+size = Vector3(1.55, 3.0, 0.28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_side"]
+size = Vector3(1.55, 3.0, 0.28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lintel"]
+material = SubResource("StandardMaterial3D_concrete")
+size = Vector3(1.3, 0.75, 0.28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lintel"]
+size = Vector3(1.3, 0.75, 0.28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jamb_v"]
+material = SubResource("StandardMaterial3D_frame")
+size = Vector3(0.08, 2.25, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jamb_h"]
+material = SubResource("StandardMaterial3D_frame")
+size = Vector3(1.38, 0.08, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_room_side"]
+material = SubResource("StandardMaterial3D_concrete")
+size = Vector3(0.26, 3.0, 4.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_room_side"]
+size = Vector3(0.26, 3.0, 4.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_room_back"]
+material = SubResource("StandardMaterial3D_concrete")
+size = Vector3(4.66, 3.0, 0.28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_room_back"]
+size = Vector3(4.66, 3.0, 0.28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_win_sill"]
+material = SubResource("StandardMaterial3D_concrete")
+size = Vector3(0.26, 1.05, 4.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_win_sill"]
+size = Vector3(0.26, 1.05, 4.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_door_panel"]
+material = SubResource("StandardMaterial3D_door_wood")
+size = Vector3(1.22, 2.2, 0.08)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_door_panel"]
+size = Vector3(1.22, 2.2, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_handle"]
+material = SubResource("StandardMaterial3D_brass")
+size = Vector3(0.14, 0.035, 0.14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_interact"]
+size = Vector3(2.8, 2.6, 3.6)
+
+[node name="BreachWallDoor" type="Node3D"]
+
+[node name="WallStructure" type="StaticBody3D" parent="."]
+
+[node name="FrontLeftMesh" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.425, 1.5, 0)
+mesh = SubResource("BoxMesh_wall_side")
+
+[node name="FrontLeftCol" type="CollisionShape3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.425, 1.5, 0)
+shape = SubResource("BoxShape3D_wall_side")
+
+[node name="FrontRightMesh" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.425, 1.5, 0)
+mesh = SubResource("BoxMesh_wall_side")
+
+[node name="FrontRightCol" type="CollisionShape3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.425, 1.5, 0)
+shape = SubResource("BoxShape3D_wall_side")
+
+[node name="FrontLintelMesh" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.625, 0)
+mesh = SubResource("BoxMesh_lintel")
+
+[node name="FrontLintelCol" type="CollisionShape3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.625, 0)
+shape = SubResource("BoxShape3D_lintel")
+
+[node name="FrameLeft" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 1.125, 0)
+mesh = SubResource("BoxMesh_jamb_v")
+
+[node name="FrameRight" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 1.125, 0)
+mesh = SubResource("BoxMesh_jamb_v")
+
+[node name="FrameTop" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+mesh = SubResource("BoxMesh_jamb_h")
+
+[node name="RoomRightWallMesh" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.5, -2.24)
+mesh = SubResource("BoxMesh_room_side")
+
+[node name="RoomRightWallCol" type="CollisionShape3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.5, -2.24)
+shape = SubResource("BoxShape3D_room_side")
+
+[node name="RoomLeftSillMesh" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.525, -2.24)
+mesh = SubResource("BoxMesh_win_sill")
+
+[node name="RoomLeftSillCol" type="CollisionShape3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.525, -2.24)
+shape = SubResource("BoxShape3D_win_sill")
+
+[node name="RoomLeftTopMesh" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 2.475, -2.24)
+mesh = SubResource("BoxMesh_win_sill")
+
+[node name="RoomLeftTopCol" type="CollisionShape3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 2.475, -2.24)
+shape = SubResource("BoxShape3D_win_sill")
+
+[node name="RoomBackWallMesh" type="MeshInstance3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4.48)
+mesh = SubResource("BoxMesh_room_back")
+
+[node name="RoomBackWallCol" type="CollisionShape3D" parent="WallStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4.48)
+shape = SubResource("BoxShape3D_room_back")
+
+[node name="DoorController" type="Node3D" parent="."]
+script = ExtResource("1_door")
+
+[node name="DoorPivot" type="Node3D" parent="DoorController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61, 0, 0)
+
+[node name="DoorBody" type="StaticBody3D" parent="DoorController/DoorPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61, 1.11, 0)
+
+[node name="PanelMesh" type="MeshInstance3D" parent="DoorController/DoorPivot/DoorBody"]
+mesh = SubResource("BoxMesh_door_panel")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorController/DoorPivot/DoorBody"]
+shape = SubResource("BoxShape3D_door_panel")
+
+[node name="HandleMesh" type="MeshInstance3D" parent="DoorController/DoorPivot/DoorBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, -0.05, 0)
+mesh = SubResource("BoxMesh_handle")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="DoorController/DoorPivot/DoorBody"]
+
+[node name="InteractArea" type="Area3D" parent="DoorController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorController/InteractArea"]
+shape = SubResource("BoxShape3D_interact")
+
+[node name="PromptLabel" type="Label3D" parent="DoorController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+modulate = Color(1, 0.95, 0.72, 1)
+text = "[E] Open Door"
+font_size = 38
+
+[node name="RoomTarget_Left" parent="." instance=ExtResource("2_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, -3.5)
+
+[node name="RoomTarget_Right" parent="." instance=ExtResource("2_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, -3.5)

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cpackweapon01"]
+
+[ext_resource type="Script" path="res://scenes/weapon/pack_weapon.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/effects/muzzle_flash.tscn" id="2_flash"]
+
+[node name="PackWeapon" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="ModelContainer" type="Node3D" parent="."]
+
+[node name="WeaponMesh" type="MeshInstance3D" parent="ModelContainer"]
+cast_shadow = 0
+
+[node name="CoverPivot" type="Node3D" parent="ModelContainer"]
+
+[node name="CoverMesh" type="MeshInstance3D" parent="ModelContainer/CoverPivot"]
+visible = false
+cast_shadow = 0
+
+[node name="SlideMesh" type="MeshInstance3D" parent="ModelContainer"]
+visible = false
+cast_shadow = 0
+
+[node name="BeltMesh" type="MeshInstance3D" parent="ModelContainer"]
+visible = false
+cast_shadow = 0
+
+[node name="BoltPivot" type="Node3D" parent="ModelContainer"]
+
+[node name="BoltMesh" type="MeshInstance3D" parent="ModelContainer/BoltPivot"]
+visible = false
+cast_shadow = 0
+
+[node name="MagMesh" type="MeshInstance3D" parent="ModelContainer"]
+visible = false
+cast_shadow = 0
+
+[node name="MuzzleFlash" parent="." instance=ExtResource("2_flash")]
+visible = false
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="."]
+volume_db = -8.0
+
+[node name="GrenadeSound" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
